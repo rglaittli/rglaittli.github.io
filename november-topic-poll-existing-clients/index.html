@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>November 2026 - Existing client topics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Paradigm Life design system tokens (design-system/tokens.css), Montserrat as the Gotham fallback */
+:root {
+  --color-brand-primary: #73a950;
+  --color-brand-primary-strong: #547b3a;
+  --color-brand-growth: #6fa34d;
+  --color-brand-income: #65b2e8;
+  --color-brand-legacy: #daa900;
+  --color-brand-gray-3: #cbcbc8;
+  --color-ink: #231f20;
+  --color-text-heading: #4b4b4b;
+  --color-text-body: #515867;
+  --color-text-muted: #6e7a87;
+  --color-text-on-ink: #ffffff;
+  --color-surface-shell: #fafafa;
+  --color-surface-card: #ffffff;
+  --color-surface-accent: #f1f6ee;
+  --color-surface-selected: #1e2f25;
+  --color-surface-footer: #1e2f25;
+  --color-border-default: #e2e2e2;
+  --color-border-strong: #cfd3da;
+  --font-display: 'Gotham', 'Montserrat', 'Helvetica Neue', sans-serif;
+  --font-body: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  --radius-xl: 12px;
+  --radius-pill: 100px;
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-ink);
+  background: var(--color-surface-shell);
+}
+.top { background: var(--color-surface-footer); color: var(--color-text-on-ink); padding: 14px 20px; }
+.top-inner { max-width: 920px; margin: 0 auto; }
+.wordmark { font-family: var(--font-display); font-weight: 700; font-size: 16px; letter-spacing: 0.02em; }
+.stages { font-size: 12px; color: var(--color-brand-gray-3); margin-top: 2px; }
+.stages .g { color: var(--color-brand-growth); }
+.stages .i { color: var(--color-brand-income); }
+.stages .l { color: var(--color-brand-legacy); }
+.wrap { max-width: 920px; margin: 0 auto; padding: 32px 20px 64px; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-brand-primary-strong); }
+header h1 { font-family: var(--font-display); font-size: 28px; line-height: 1.25; font-weight: 700; margin: 8px 0 10px; }
+header h1 em { font-style: normal; color: var(--color-brand-primary-strong); }
+.lead { font-size: 16px; color: var(--color-text-body); max-width: 62ch; margin: 0 0 24px; }
+.card {
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.card h2 { font-family: var(--font-display); font-size: 18px; line-height: 1.25; margin: 0 0 12px; }
+.howto { margin: 0 0 12px; color: var(--color-text-body); }
+.poll-list { margin: 0; padding-left: 1.25rem; }
+.poll-list li { margin: 6px 0; }
+.chan { color: var(--color-text-muted); font-size: 13px; }
+.note { font-size: 13px; color: var(--color-text-body); margin: 16px 0 0; padding: 12px 14px; background: var(--color-surface-accent); border-radius: 8px; }
+.note strong { color: var(--color-ink); }
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 18px; }
+.tab {
+  font-family: var(--font-display);
+  font-size: 13px; font-weight: 600;
+  min-width: 40px;
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-surface-card);
+  color: var(--color-text-body);
+  border-radius: var(--radius-pill);
+  padding: 8px 14px;
+  cursor: pointer;
+}
+.tab:hover { border-color: var(--color-brand-primary); color: var(--color-brand-primary-strong); }
+.tab:focus-visible { outline: 2px solid var(--color-brand-primary); outline-offset: 2px; }
+.tab[aria-selected="true"] { background: var(--color-surface-selected); color: var(--color-text-on-ink); border-color: var(--color-surface-selected); }
+.panel { display: none; }
+.panel.active { display: block; }
+.panel h3 { font-family: var(--font-display); font-size: 20px; line-height: 1.25; margin: 0 0 16px; }
+.section-lbl { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); margin: 0 0 8px; }
+.simple { border-left: 4px solid var(--color-brand-growth); padding: 4px 0 4px 16px; margin-bottom: 20px; }
+.more { border-left: 4px solid var(--color-brand-income); padding: 4px 0 4px 16px; }
+.meta { margin: 0; }
+.meta dt { font-size: 12px; font-weight: 700; color: var(--color-text-muted); margin-top: 10px; }
+.meta dt:first-child { margin-top: 0; }
+.meta dd { margin: 2px 0 0; }
+.meta ul { margin: 4px 0 0; padding-left: 1.1rem; }
+.meta ul li { margin: 3px 0; }
+.card-id { font-size: 12px; color: var(--color-text-muted); margin: 14px 0 0; }
+footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--color-border-default); font-size: 12px; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+<div class="top"><div class="top-inner">
+  <div class="wordmark">Paradigm Life&reg;</div>
+  <div class="stages"><span class="g">Growth</span> &nbsp;|&nbsp; <span class="i">Income</span> &nbsp;|&nbsp; <span class="l">Legacy</span></div>
+</div></div>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Sales poll companion</div>
+  <h1>November 2026 - Existing <em>client</em> topics</h1>
+  <p class="lead">Rank the short titles in the Zoom poll. Open a topic tab below if you want more context.</p>
+</header>
+
+<section class="card">
+  <h2>Poll titles (existing clients: newsletter and live stream)</h2>
+  <p class="howto"><strong>How to vote:</strong> rank your top 4 topics, based on what you are hearing from your clients.</p>
+  <ol class="poll-list">
+    <li>How to Read Your Annual Policy Statement <span class="chan">(Newsletter)</span></li>
+    <li>Your First Year as a Policy Owner, Step by Step <span class="chan">(Newsletter)</span></li>
+    <li>What Stays Steady in Your Policy When Markets Move <span class="chan">(Newsletter)</span></li>
+    <li>A Guide for the Family Member Who Runs the Family Bank <span class="chan">(Newsletter)</span></li>
+    <li>Using Your Policy&rsquo;s Cash Value as an Opportunity Fund <span class="chan">(Live stream)</span></li>
+    <li>How to Tell Your Plan Is on Track Each Year <span class="chan">(Live stream)</span></li>
+    <li>A Year-End Check of Your Family&rsquo;s Coverage <span class="chan">(Live stream)</span></li>
+    <li>Where Your Policy Fits in Year-End Tax Planning <span class="chan">(Live stream)</span></li>
+  </ol>
+  <p class="note"><strong>Write-in (Zoom poll only):</strong> What other questions are your clients asking that we should cover in a newsletter or live stream? Share a topic or an example of a question someone asked. Optional!</p>
+</section>
+
+<section class="card">
+  <h2>Topic detail</h2>
+  <div class="tabs" role="tablist" aria-label="Topics">
+    <button class="tab" role="tab" id="tab-1" aria-controls="p1" aria-selected="true" tabindex="0" data-tab="p1">1</button>
+    <button class="tab" role="tab" id="tab-2" aria-controls="p2" aria-selected="false" tabindex="-1" data-tab="p2">2</button>
+    <button class="tab" role="tab" id="tab-3" aria-controls="p3" aria-selected="false" tabindex="-1" data-tab="p3">3</button>
+    <button class="tab" role="tab" id="tab-4" aria-controls="p4" aria-selected="false" tabindex="-1" data-tab="p4">4</button>
+    <button class="tab" role="tab" id="tab-5" aria-controls="p5" aria-selected="false" tabindex="-1" data-tab="p5">5</button>
+    <button class="tab" role="tab" id="tab-6" aria-controls="p6" aria-selected="false" tabindex="-1" data-tab="p6">6</button>
+    <button class="tab" role="tab" id="tab-7" aria-controls="p7" aria-selected="false" tabindex="-1" data-tab="p7">7</button>
+    <button class="tab" role="tab" id="tab-8" aria-controls="p8" aria-selected="false" tabindex="-1" data-tab="p8">8</button>
+  </div>
+
+  <div id="p1" class="panel active" role="tabpanel" aria-labelledby="tab-1">
+    <h3>1. How to Read Your Annual Policy Statement</h3>
+    <div class="simple">
+      <div class="section-lbl">Simple</div>
+      <dl class="meta">
+        <dt>Audience</dt><dd>Existing clients</dd>
+        <dt>For</dt><dd>The Legacy Architect</dd>
+        <dt>In one line</dt><dd>A client who is &rsquo;illustration-apprehensive&rsquo; gets a plain guide to checking the statement against what was shown before they worry.</dd>
+        <dt>How it&rsquo;s used</dt><dd>Newsletter</dd>
+      </dl>
+    </div>
+    <div class="more">
+      <div class="section-lbl">More depth</div>
+      <dl class="meta">
+        <dt>What we&rsquo;ll cover</dt>
+        <dd><ul>
+          <li>A walk through your annual statement, line by line</li>
+          <li>How to compare it with the projection you saw when you bought, and why dividends (which are not guaranteed) can make the numbers differ</li>
+          <li>What to bring to your next check-in if something looks different</li>
+        </ul></dd>
+        <dt>Why this audience</dt><dd>The Legacy Architect&rsquo;s Stage II requirement is precision: the delivered policy must match the illustration and any variance is explained proactively.</dd>
+      </dl>
+      <p class="card-id">Card 2026-11-newsletter-01</p>
+    </div>
+  </div>
+
+  <div id="p2" class="panel" role="tabpanel" aria-labelledby="tab-2">
+    <h3>2. Your First Year as a Policy Owner, Step by Step</h3>
+    <div class="simple">
+      <div class="section-lbl">Simple</div>
+      <dl class="meta">
+        <dt>Audience</dt><dd>Existing clients</dd>
+        <dt>For</dt><dd>The Pragmatic Protector</dd>
+        <dt>In one line</dt><dd>A client who asked for &rsquo;a clear playbook of what I gotta do and when&rsquo; receives exactly that for year one.</dd>
+        <dt>How it&rsquo;s used</dt><dd>Newsletter</dd>
+      </dl>
+    </div>
+    <div class="more">
+      <div class="section-lbl">More depth</div>
+      <dl class="meta">
+        <dt>What we&rsquo;ll cover</dt>
+        <dd><ul>
+          <li>What to expect in your first year after the policy starts</li>
+          <li>One clear next step at each point in the year</li>
+          <li>How to confirm the protection you bought for your family is active</li>
+        </ul></dd>
+        <dt>Why this audience</dt><dd>The Pragmatic Protector&rsquo;s wish for a clear playbook carries straight into Stage II&rsquo;s plain-language milestone requirement.</dd>
+      </dl>
+      <p class="card-id">Card 2026-11-newsletter-02</p>
+    </div>
+  </div>
+
+  <div id="p3" class="panel" role="tabpanel" aria-labelledby="tab-3">
+    <h3>3. What Stays Steady in Your Policy When Markets Move</h3>
+    <div class="simple">
+      <div class="section-lbl">Simple</div>
+      <dl class="meta">
+        <dt>Audience</dt><dd>Existing clients</dd>
+        <dt>For</dt><dd>The Certainty Seeker (also The Pragmatic Protector)</dd>
+        <dt>In one line</dt><dd>After a rate decision, a couple gets a short, jargon-free note restating what is contractual in what they already own.</dd>
+        <dt>How it&rsquo;s used</dt><dd>Newsletter</dd>
+      </dl>
+    </div>
+    <div class="more">
+      <div class="section-lbl">More depth</div>
+      <dl class="meta">
+        <dt>What we&rsquo;ll cover</dt>
+        <dd><ul>
+          <li>What the guaranteed parts of your policy do when markets or interest rates change</li>
+          <li>A plain-English recap written for both spouses to read together</li>
+          <li>What to bring to your next check-in if a news headline worries you</li>
+        </ul></dd>
+        <dt>Why this audience</dt><dd>The Certainty Seeker needs ongoing confirmation that the floor holds, with the spouse included in communication.</dd>
+      </dl>
+      <p class="card-id">Card 2026-11-newsletter-03</p>
+    </div>
+  </div>
+
+  <div id="p4" class="panel" role="tabpanel" aria-labelledby="tab-4">
+    <h3>4. A Guide for the Family Member Who Runs the Family Bank</h3>
+    <div class="simple">
+      <div class="section-lbl">Simple</div>
+      <dl class="meta">
+        <dt>Audience</dt><dd>Existing clients</dd>
+        <dt>For</dt><dd>The Family Guardian</dd>
+        <dt>In one line</dt><dd>A client who came to become the &rsquo;Family Banker&rsquo; gets a practical guide to operating the system they now own.</dd>
+        <dt>How it&rsquo;s used</dt><dd>Newsletter</dd>
+      </dl>
+    </div>
+    <div class="more">
+      <div class="section-lbl">More depth</div>
+      <dl class="meta">
+        <dt>What we&rsquo;ll cover</dt>
+        <dd><ul>
+          <li>How to check that the policy is active</li>
+          <li>The everyday basics of running the Family Bank, for the person in charge of it</li>
+          <li>How to bring the rest of the family in so the system lasts beyond you</li>
+        </ul></dd>
+        <dt>Why this audience</dt><dd>The Family Guardian&rsquo;s Stage II requirement is confirmation the fortress is in force and hers to operate, through family-centered onboarding.</dd>
+      </dl>
+      <p class="card-id">Card 2026-11-newsletter-04</p>
+    </div>
+  </div>
+
+  <div id="p5" class="panel" role="tabpanel" aria-labelledby="tab-5">
+    <h3>5. Using Your Policy&rsquo;s Cash Value as an Opportunity Fund</h3>
+    <div class="simple">
+      <div class="section-lbl">Simple</div>
+      <dl class="meta">
+        <dt>Audience</dt><dd>Existing clients</dd>
+        <dt>For</dt><dd>The Sovereign CEO</dd>
+        <dt>In one line</dt><dd>A business owner watches the access mechanics demonstrated on screen instead of taking them on faith.</dd>
+        <dt>How it&rsquo;s used</dt><dd>Live stream</dd>
+      </dl>
+    </div>
+    <div class="more">
+      <div class="section-lbl">More depth</div>
+      <dl class="meta">
+        <dt>What we&rsquo;ll cover</dt>
+        <dd><ul>
+          <li>A live, on-screen walk-through of how you access money in a policy you already own</li>
+          <li>How paying it back, and when you do, affects the policy over time</li>
+          <li>Live Q&amp;A on your access questions, with follow-up at your next check-in</li>
+        </ul></dd>
+        <dt>Why this audience</dt><dd>The Sovereign CEO&rsquo;s Stage II requirement is velocity and visibility: an early demonstration of access and liquidity mechanics. Client-side angle on the recent prospect-facing policy-loan topic.</dd>
+      </dl>
+      <p class="card-id">Card 2026-11-livestream-01</p>
+    </div>
+  </div>
+
+  <div id="p6" class="panel" role="tabpanel" aria-labelledby="tab-6">
+    <h3>6. How to Tell Your Plan Is on Track Each Year</h3>
+    <div class="simple">
+      <div class="section-lbl">Simple</div>
+      <dl class="meta">
+        <dt>Audience</dt><dd>Existing clients</dd>
+        <dt>For</dt><dd>The Legacy Architect</dd>
+        <dt>In one line</dt><dd>A client who thinks in &rsquo;machines&rsquo; and &rsquo;engines&rsquo; sees how to check the machine is running without waiting for a problem.</dd>
+        <dt>How it&rsquo;s used</dt><dd>Live stream</dd>
+      </dl>
+    </div>
+    <div class="more">
+      <div class="section-lbl">More depth</div>
+      <dl class="meta">
+        <dt>What we&rsquo;ll cover</dt>
+        <dd><ul>
+          <li>What to look at each year to see whether your plan is working</li>
+          <li>How the pieces fit together into something that can last for generations</li>
+          <li>Live Q&amp;A on what you are seeing in your own numbers</li>
+        </ul></dd>
+        <dt>Why this audience</dt><dd>The Legacy Architect wants visibility into how the financial machine is running toward a permanent multi-generational institution.</dd>
+      </dl>
+      <p class="card-id">Card 2026-11-livestream-02</p>
+    </div>
+  </div>
+
+  <div id="p7" class="panel" role="tabpanel" aria-labelledby="tab-7">
+    <h3>7. A Year-End Check of Your Family&rsquo;s Coverage</h3>
+    <div class="simple">
+      <div class="section-lbl">Simple</div>
+      <dl class="meta">
+        <dt>Audience</dt><dd>Existing clients</dd>
+        <dt>For</dt><dd>The Pragmatic Protector (also The Certainty Seeker)</dd>
+        <dt>In one line</dt><dd>A client who bought to protect their family runs a short year-end check live alongside the Wealth Strategists.</dd>
+        <dt>How it&rsquo;s used</dt><dd>Live stream</dd>
+      </dl>
+    </div>
+    <div class="more">
+      <div class="section-lbl">More depth</div>
+      <dl class="meta">
+        <dt>What we&rsquo;ll cover</dt>
+        <dd><ul>
+          <li>A simple year-end checklist for the policies you already own</li>
+          <li>How to confirm your coverage is active and still fits what your family needs</li>
+          <li>What to bring to your next check-in before the year ends</li>
+        </ul></dd>
+        <dt>Why this audience</dt><dd>The Pragmatic Protector&rsquo;s Stage II requirement includes confirmation the protection bought for family is real and in force.</dd>
+      </dl>
+      <p class="card-id">Card 2026-11-livestream-03</p>
+    </div>
+  </div>
+
+  <div id="p8" class="panel" role="tabpanel" aria-labelledby="tab-8">
+    <h3>8. Where Your Policy Fits in Year-End Tax Planning</h3>
+    <div class="simple">
+      <div class="section-lbl">Simple</div>
+      <dl class="meta">
+        <dt>Audience</dt><dd>Existing clients</dd>
+        <dt>For</dt><dd>The Sovereign CEO (also The Legacy Architect)</dd>
+        <dt>In one line</dt><dd>A business owner worried about capital leaking to taxes sees where their existing Family Bank fits before year-end.</dd>
+        <dt>How it&rsquo;s used</dt><dd>Live stream</dd>
+      </dl>
+    </div>
+    <div class="more">
+      <div class="section-lbl">More depth</div>
+      <dl class="meta">
+        <dt>What we&rsquo;ll cover</dt>
+        <dd><ul>
+          <li>How the tax advantages of what you already own fit with other year-end moves</li>
+          <li>Common year-end questions from clients, answered live</li>
+          <li>What to raise with your Wealth Strategist in a year-end tax review</li>
+        </ul></dd>
+        <dt>Why this audience</dt><dd>Answers the Sovereign CEO&rsquo;s fear of wealth leaking to taxes by showing the Family Bank function in the client&rsquo;s own year.</dd>
+      </dl>
+      <p class="card-id">Card 2026-11-livestream-04</p>
+    </div>
+  </div>
+</section>
+
+<footer>Q4 marketing rock &middot; Existing-client companion for Zoom poll</footer>
+</div>
+<script>
+var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+function select(btn) {
+  tabs.forEach(function (t) {
+    var on = t === btn;
+    t.setAttribute('aria-selected', on ? 'true' : 'false');
+    t.tabIndex = on ? 0 : -1;
+    document.getElementById(t.dataset.tab).classList.toggle('active', on);
+  });
+}
+tabs.forEach(function (btn, i) {
+  btn.addEventListener('click', function () { select(btn); });
+  btn.addEventListener('keydown', function (e) {
+    var n = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+    if (!n) return;
+    var next = tabs[(i + n + tabs.length) % tabs.length];
+    select(next); next.focus();
+  });
+});
+</script>
+</body>
+</html>
