@@ -76,7 +76,20 @@ main a{color:var(--strong)}
 .rs .icb{margin:0 auto 8px}.rs:not(:last-child)::after{content:"→";position:absolute;right:-10px;top:50%;transform:translateY(-50%);color:var(--brand);font-weight:700;z-index:2}
 .rs:first-child{background:var(--footer);color:#fff}.rs:first-child .icb{background:rgba(255,255,255,.12);color:#a8dc87}
 .rs:last-child{background:var(--wash);border:2px solid var(--brand)}
-@media(max-width:860px){.fmt{grid-template-columns:1fr}.rf{grid-template-columns:1fr 1fr}.rs::after{display:none}}</style>
+@media(max-width:860px){.fmt{grid-template-columns:1fr}.rf{grid-template-columns:1fr 1fr}.rs::after{display:none}}.crg{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:18px;margin-top:14px;align-items:start}
+.cr{margin:0;background:#fff;border:1px solid #e3e8e2;border-radius:14px;padding:10px;box-shadow:0 2px 10px rgba(20,40,20,.06)}
+.cr a{display:block;border-radius:8px;overflow:hidden;cursor:zoom-in}.cr img{display:block;width:100%;height:auto}
+.cr figcaption{font-size:13px;line-height:1.45;margin-top:8px;color:#4a5550}.cr figcaption b{display:block;color:#1f2a24;font-size:14px}
+.crflag{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.crside{display:grid;gap:12px}.crph{background:#fff7e0;border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.45}.crph b{display:block;font-size:13.5px;margin-bottom:2px}
+.crph code{font-size:12px;background:#fff;border-radius:4px;padding:0 4px}
+.crhint{font-size:12.5px;color:#6b756f;margin:10px 0 0}
+.vtag{display:inline-block;font-size:11.5px;font-weight:700;background:#e8f3df;color:#3d6b22;border-radius:999px;padding:2px 9px;margin:6px 0 0;text-decoration:none}
+#lb{border:0;padding:0;background:transparent;max-width:min(94vw,1100px);width:100%}#lb::backdrop{background:rgba(10,20,14,.82)}
+#lb img{display:block;width:100%;height:auto;max-height:88vh;object-fit:contain;border-radius:10px}
+#lb button{position:absolute;top:8px;right:8px;border:0;background:#fff;color:#1f2a24;border-radius:999px;width:34px;height:34px;font-size:20px;cursor:pointer}
+@media(max-width:760px){.crg{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <header class="top"><div class="in"><div class="wm">Paradigm <span>Life</span></div><div class="draft">Draft for leadership review</div></div></header>
@@ -91,8 +104,16 @@ main a{color:var(--strong)}
 <div class="kpi"><b>3 × ~20 min</b><span>webinar series</span></div>
 <div class="kpi"><b>3</b><span>purposes</span></div>
 </div>
-<div class="hchips"><span class="hchip g"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>In progress: Patrick finalizing scripts</span><span class="hchip y"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>Name not final</span><span class="hchip"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4"/></svg>Source: Patrick's October 19 voice message to Rachel</span></div>
+<div class="hchips"><span class="hchip g"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>In progress: Patrick finalizing scripts</span><span class="hchip y"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>Name not final</span><a class="hchip g" href="#creative" style="text-decoration:none">Draft webinar title cards ↓</a><span class="hchip"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4"/></svg>Source: Patrick's October 19 voice message to Rachel</span></div>
 </div>
+
+<section class="sec" id="creative"><h2>Draft <em>creative</em></h2><p class="sub">Rachel's proof-of-concept title cards for the webinar series. Templates only: the series name, session titles, dates and times are placeholders still to be filled. Pending leadership approval.</p>
+<div class="crg">
+<figure class="cr"><a class="lbx" href="creative/webinar-title-dark-session01-main-1600.webp" data-alt="Draft 16:9 webinar title card, dark design. Paradigm Life logo and Live Webinar Series. Session 01, placeholder [Series Name], placeholder session title, Legacy · 4-3-2-1 System, a [Date] · [Time] MT pill, host Patrick Donohoe, Founder and CEO, Paradigm Life, and a single host photo placeholder."><img src="creative/webinar-title-dark-session01-main-800.webp" srcset="creative/webinar-title-dark-session01-main-400.webp 400w, creative/webinar-title-dark-session01-main-800.webp 800w, creative/webinar-title-dark-session01-main-1600.webp 1600w" sizes="(max-width:760px) 92vw, 700px" width="800" height="450" loading="lazy" decoding="async" alt="Draft 16:9 webinar title card, dark design. Paradigm Life logo and Live Webinar Series. Session 01, placeholder [Series Name], placeholder session title, Legacy · 4-3-2-1 System, a [Date] · [Time] MT pill, host Patrick Donohoe, Founder and CEO, Paradigm Life, and a single host photo placeholder."></a><figcaption><b>Main title card (solo host)</b>Dark. Shown as Session 01 with a single host photo placeholder for Patrick.<span class="crflag"><span class="badge b-exp" style="margin-left:0">Rachel&#39;s proof-of-concept draft</span><span class="badge b-tbd" style="margin-left:0">Pending leadership approval</span></span></figcaption></figure>
+<div class="crside">
+<figure class="cr"><a class="lbx" href="creative/webinar-title-green-session02-secondary-1600.webp" data-alt="Draft 16:9 webinar title card, green design. Paradigm Life logo and Live Webinar Series. Session 02, placeholder [Series Name], placeholder session title, Growth · 4-3-2-1 System, a [Date] · [Time] MT pill, and two photo placeholders: host Patrick Donohoe and a [Co-host Name] with [Title]."><img src="creative/webinar-title-green-session02-secondary-800.webp" srcset="creative/webinar-title-green-session02-secondary-400.webp 400w, creative/webinar-title-green-session02-secondary-800.webp 800w, creative/webinar-title-green-session02-secondary-1600.webp 1600w" sizes="(max-width:760px) 92vw, 340px" width="800" height="450" loading="lazy" decoding="async" alt="Draft 16:9 webinar title card, green design. Paradigm Life logo and Live Webinar Series. Session 02, placeholder [Series Name], placeholder session title, Growth · 4-3-2-1 System, a [Date] · [Time] MT pill, and two photo placeholders: host Patrick Donohoe and a [Co-host Name] with [Title]."></a><figcaption><b>Variant: host + co-host</b>Green. Shown as Session 02 with host and co-host placeholders.<span class="crflag"><span class="badge b-exp" style="margin-left:0">Rachel&#39;s proof-of-concept draft</span><span class="badge b-tbd" style="margin-left:0">Pending leadership approval</span></span></figcaption></figure>
+<div class="crph"><b>Still to fill</b><code>[Series Name]</code> <code>[Session title]</code> <code>[Date]</code> <code>[Time] MT</code>, host photos, and the co-host name and title on the variant. The series name is not final.</div>
+</div></div><p class="crhint">Tap either card to see it full size.</p></section>
 
 <section class="sec"><h2>Production <em>path</em></h2>
 <div class="pane"><div class="tl" style="--n:4">
@@ -106,7 +127,7 @@ main a{color:var(--strong)}
 <div class="fmt">
 <div class="ic-cards two">
 <div class="icard "><div class="icb "><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></div><div><h3>Video sales letter (VSL)</h3><p>About 10 minutes.</p></div></div>
-<div class="icard "><div class="icb "><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 10 5-10 5L2 7l10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></div><div><h3>Progressive webinar series</h3><p>Three parts, each about 20 minutes.</p></div></div>
+<div class="icard "><div class="icb "><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 10 5-10 5L2 7l10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></div><div><h3>Progressive webinar series</h3><p>Three parts, each about 20 minutes.</p><a class="vtag" href="#creative">Draft title cards ↑</a></div></div>
 <div class="icard "><div class="icb "><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3zM3 19a2 2 0 0 0 2 2h1v-6H3z"/></svg></div><div><h3>Written piece with audio</h3><p>An article with an audio voiceover: an audio-book-style piece framing the whole approach.</p></div></div>
 <div class="icard "><div class="icb "><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></div><div><h3>Where it lives</h3><p>The Education Center, plus YouTube, with possible paid advertising pointing to it.</p></div></div>
 </div>
@@ -155,5 +176,9 @@ main a{color:var(--strong)}
 </div></section>
 </main>
 <footer><div class="in"><b>Paradigm Life</b> · Marketing · Draft for internal review, not for distribution. Working version as of October 2026.</div></footer>
+<dialog id="lb" aria-label="Full-size image"><button type="button" aria-label="Close">×</button><img alt=""></dialog>
+<script>(function(){var d=document.getElementById('lb');if(!d||!d.showModal)return;var im=d.querySelector('img');
+document.querySelectorAll('a.lbx').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();im.src=a.getAttribute('href');im.alt=a.dataset.alt||'';d.showModal();});});
+d.addEventListener('click',function(e){if(e.target===d||e.target.tagName==='BUTTON')d.close();});})();</script>
 </body>
 </html>
