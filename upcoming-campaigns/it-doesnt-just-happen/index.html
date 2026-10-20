@@ -7,22 +7,137 @@
 <title>It Doesn’t Just Happen: Social Campaign | Paradigm Life</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
+<style>
+/* visual pass (page-scoped) */
+.ic{width:22px;height:22px;display:block;flex:none}
+.icb{width:38px;height:38px;border-radius:10px;background:var(--wash);color:var(--strong);display:flex;align-items:center;justify-content:center;flex:none}
+.icb.y{background:var(--tbd);color:var(--tbdtx)}.icb.b{background:#e8f3f9;color:#1d6f96}.icb.r{background:#fef3f4;color:#b0302f}.icb.d{background:var(--footer);color:#cfe8bf}
+.vhero{background:linear-gradient(135deg,#1e2f25 0%,#2c4a33 60%,#3f6b3a 100%);color:#e6efe2;border-radius:16px;padding:30px 34px;margin-top:16px;box-shadow:0 10px 30px rgba(30,47,37,.2)}
+.vhero h1{color:#fff;margin-top:6px}.vhero h1 em{color:#a8dc87}.vhero .eyebrow{color:#a8dc87}.vhero .lede{color:#dfe9da;font-size:17px;margin:0}
+.vhero a{color:#cfe8bf}
+.hchips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.hchip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:6px 12px;font:600 12.5px Montserrat,sans-serif;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none}
+.hchip .ic{width:15px;height:15px}.hchip.y{background:var(--tbd);color:var(--tbdtx);border-color:var(--tbd)}.hchip.g{background:#a8dc87;color:#1e2f25;border-color:#a8dc87}.hchip.b{background:#e8f3f9;color:#1d6f96;border-color:#e8f3f9}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:20px}
+.kpi{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:14px 16px}
+.kpi b{display:block;font:700 30px/1.1 Montserrat,sans-serif;color:#fff}.kpi span{font-size:13px;color:#cfe0c8}
+.kpis.lt .kpi{background:#fff;border:0;border-top:4px solid var(--brand);box-shadow:var(--sh)}.kpis.lt .kpi b{color:var(--ink)}.kpis.lt .kpi span{color:var(--body)}
+.ic-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.icard{background:#fff;border-radius:var(--r);box-shadow:var(--sh);padding:18px;border:1px solid #f0f1ee;display:flex;gap:12px;align-items:flex-start}
+.icard h3{margin:0 0 4px;font-size:16px}.icard p{margin:0;font-size:14.5px}.icard ul{margin:6px 0 0;padding-left:18px;font-size:14px}
+.icard.lb{border-left:4px solid var(--brand)}.icard.ly{border-left:4px solid #daa900}.icard.lr{border-left:4px solid #d9534f}
+.flow{display:grid;grid-template-columns:repeat(var(--n,4),1fr);gap:16px;margin-top:6px}
+.fs{position:relative;background:#fff;border-radius:14px;box-shadow:var(--sh);padding:22px 16px 16px;border-top:5px solid var(--brand)}
+.fs .n{position:absolute;top:-14px;left:14px;min-width:28px;height:28px;padding:0 8px;border-radius:999px;background:var(--footer);color:#fff;font:700 12.5px/28px Montserrat,sans-serif;text-align:center}
+.fs:not(:last-child)::after{content:"→";position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:var(--brand);font-weight:700;z-index:2}
+.fs h3{font-size:15.5px;margin:8px 0 4px}.fs p{margin:0;font-size:14px}.fs ul{margin:6px 0 0;padding-left:18px;font-size:13.5px}
+.fs .tag{position:absolute;top:-11px;right:12px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.chk{list-style:none;margin:0;padding:0}.chk li{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-top:1px solid var(--line);font-size:14.5px}.chk li:first-child{border-top:0}
+.chk .bl{width:10px;height:10px;border-radius:50%;border:2.5px solid var(--brand);margin-top:7px;flex:none}
+.chk .ok{width:18px;height:18px;color:var(--brand);margin-top:3px}
+.chk .q{width:18px;height:18px;color:#b08600;margin-top:3px}
+.pane{background:#fff;border-radius:var(--r);box-shadow:var(--sh);padding:18px 20px}
+.pane h3{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}.chips span{font-size:12.5px;background:var(--wash);color:#3e5f2b;border-radius:999px;padding:4px 10px}
+.chips.y span{background:var(--tbd);color:var(--tbdtx)}.chips.n span{background:#eef0f2;color:#54565a}
+.big{font:700 44px/1 Montserrat,sans-serif;color:var(--ink)}
+.diag{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.node{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--sh);display:flex;gap:10px;align-items:center;font:600 14px Montserrat,sans-serif;color:var(--ink)}
+.node.dk{background:var(--footer);color:#fff;border-color:var(--footer)}.node.gn{background:var(--wash);border-color:#cfe5c1}
+.arr{color:var(--brand);font:700 22px Montserrat,sans-serif}
+.branch{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.bar{display:grid;grid-template-columns:150px 1fr auto;gap:10px;align-items:center;font-size:13.5px;margin-top:8px}
+.bar .t{height:14px;background:#eef1ec;border-radius:7px;overflow:hidden}.bar .t i{display:block;height:100%;border-radius:7px;background:var(--brand)}
+.bar b{font:700 13px Montserrat,sans-serif;color:var(--ink);white-space:nowrap}
+.tl{position:relative;display:grid;grid-template-columns:repeat(var(--n,4),1fr);gap:8px;margin-top:10px}
+.tl::before{content:"";position:absolute;left:calc(50%/var(--n,4));right:calc(50%/var(--n,4));top:12px;height:4px;background:var(--line);border-radius:4px}
+.tp{position:relative;z-index:1;text-align:center;font-size:13px}
+.tp .d{width:26px;height:26px;border-radius:50%;margin:0 auto 8px;background:#fff;border:4px solid #b9c4b3}
+.tp.on .d{background:var(--brand);border-color:#d6ebc9}.tp.pd .d{border-color:#daa900}
+.tp b{display:block;font:700 14px Montserrat,sans-serif;color:var(--ink)}
+.oq{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.qc{background:#fff;border-radius:12px;box-shadow:var(--sh);padding:12px 14px;display:flex;gap:10px;font-size:14px}
+.qc .ic{width:18px;height:18px;color:#b08600;margin-top:2px}.qc.done .ic{color:var(--brand)}
+.gh{display:flex;align-items:center;gap:8px;font:600 12px Montserrat,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--strong);margin:22px 0 10px}
+.gh::after{content:"";flex:1;height:1px;background:var(--line)}
+.wbar{display:flex;height:16px;border-radius:8px;overflow:hidden;margin:8px 0}
+.wbar i{display:block;height:100%}
+main a{color:var(--strong)}
+@media(max-width:860px){.flow{grid-template-columns:1fr 1fr}.fs::after{display:none}.split,.oq,.branch{grid-template-columns:1fr}}
+@media(max-width:600px){.vhero{padding:24px 18px}.flow{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}.kpi b{font-size:26px}
+.tl{grid-template-columns:1fr;gap:12px}.tl::before{left:11px;right:auto;top:8px;bottom:8px;width:4px;height:auto}.tp{display:grid;grid-template-columns:26px 1fr;column-gap:12px;text-align:left}.tp .d{margin:0;grid-row:span 3}
+.bar{grid-template-columns:100px 1fr auto}.diag{flex-direction:column;align-items:stretch}.diag .arr{transform:rotate(90deg);align-self:center}.ic-cards{grid-template-columns:1fr}}
+</style><style>.sbank{background:#fff;border-radius:14px;box-shadow:var(--sh);padding:18px 20px}
+.sbt{position:relative;height:22px;background:#eef1ec;border-radius:11px;margin:14px 0 6px;overflow:hidden}
+.sbt .now{position:absolute;left:0;top:0;bottom:0;width:40%;background:var(--brand);border-radius:11px}
+.sbt .goal{position:absolute;left:80%;width:20%;top:0;bottom:0;background:repeating-linear-gradient(45deg,#fff7e0,#fff7e0 6px,#fdf0c8 6px,#fdf0c8 12px);border-left:2px dashed #daa900}
+.sbl{position:relative;height:18px;font:600 12px Montserrat,sans-serif;color:var(--ink)}
+.sbl span{position:absolute;transform:translateX(-50%);white-space:nowrap}.sbl span:last-child{transform:translateX(-100%)}
+.pc4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.pcard{background:#fff;border-radius:14px;box-shadow:var(--sh);overflow:hidden;display:flex;flex-direction:column}
+.pcard .art{height:92px;background:linear-gradient(135deg,#1e2f25,#3f6b3a);display:flex;align-items:center;justify-content:center;color:#cfe8bf;position:relative}
+.pcard .art .ic{width:34px;height:34px}.pcard .art b{position:absolute;top:10px;left:12px;font:700 13px Montserrat,sans-serif;color:#fff;background:rgba(255,255,255,.15);border-radius:999px;padding:2px 9px}
+.pcard .art em{position:absolute;bottom:8px;right:10px;font-style:normal;font:600 11px Montserrat,sans-serif;color:#1e2f25;background:#a8dc87;border-radius:999px;padding:2px 8px}
+.pcard .bd{padding:14px}.pcard h3{font-size:15px;margin:0 0 6px}.pcard p{margin:0;font-size:13.5px}
+.pcard .fm{margin-top:auto;padding:10px 14px;border-top:1px solid var(--line);font:600 12px Montserrat,sans-serif;color:var(--strong);display:flex;gap:6px;align-items:center}.pcard .fm .ic{width:15px;height:15px}
+.wk{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:10px;font:600 11.5px Montserrat,sans-serif;color:#7b8291;letter-spacing:.06em;text-transform:uppercase}
+.wk div{border-bottom:3px solid var(--line);padding-bottom:4px}
+@media(max-width:860px){.pc4,.wk{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.pc4{grid-template-columns:1fr}.wk{display:none}}</style>
 </head>
 <body>
 <header class="top"><div class="in"><div class="wm">Paradigm <span>Life</span></div><div class="draft">Draft for leadership review</div></div></header>
 <main class="wrap">
 <a class="back" href="../">← All upcoming campaigns</a><a class="fwlink" href="../content-plan-framework/">Built on the Content Plan Framework</a>
-<div class="eyebrow" style="margin-top:16px">Social campaign · Proposed · Client consent and compliance</div>
+<div class="vhero">
+<div class="eyebrow">Social campaign · Proposed · Client consent and compliance</div>
 <h1>It Doesn’t Just <em>Happen</em></h1>
-<p class="lede">A short run of social posts that make the case without saying it outright: we're not a policy, we're the people who show up. The positioning is not to tell specific client stories, but to say that we experience situations like these.</p>
+<p class="lede">A short run of social posts that make the case without saying it outright: we're not a policy, we're the people who show up. Not specific client stories; situations like these.</p>
+<div class="kpis"><div class="kpi"><b>4</b><span>posts planned</span></div><div class="kpi"><b>1 to 2</b><span>weeks, spaced</span></div><div class="kpi"><b>8 to 10</b><span>post goal (Proposed)</span></div></div>
+<div class="hchips"><span class="hchip y"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Compliance sign-off required</span><span class="hchip y"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Not produced or scheduled</span></div>
+</div>
 <div class="warn"><b>Client consent and compliance:</b> stories must be truly anonymous and used in an abstract way. We describe situations like these, not identifiable client accounts. Compliance sign-off is required before any post is scheduled. Some stories from the source call are intentionally left out of this campaign and must never be used. No post has been produced or scheduled yet.</div>
-<section class="sec"><h2>The <em>idea</em></h2><div class="cards"><div class="card"><h3>Most people don't have anyone</h3><p>Most people move through life's biggest moments without anyone in their corner who has thought it through with them.</p></div><div class="card"><h3>It doesn't just happen</h3><p>Relationships where clients include us in their family's life are built deliberately, by a team that shows up at every phase, not just at the sale.</p></div><div class="card"><h3>Voice</h3><p>Captions use the idea in our own words. No attributed quotes from team members unless they agree first.</p></div></div></section>
+
+<section class="sec"><h2>The <em>idea</em></h2>
+<div class="flow" style="--n:3">
+<div class="fs"><span class="n">1</span><div class="icb"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1M17 8l5 5M22 8l-5 5"/></svg></div><h3>Most people don't have anyone</h3><p>Most people move through life's biggest moments without anyone in their corner who has thought it through with them.</p></div>
+<div class="fs"><span class="n">2</span><div class="icb"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></svg></div><h3>It doesn't just happen</h3><p>Relationships where clients include us in their family's life are built deliberately, by a team that shows up at every phase, not just at the sale.</p></div>
+<div class="fs"><span class="n">3</span><div class="icb"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Voice</h3><p>Captions use the idea in our own words. No attributed quotes from team members unless they agree first.</p></div>
+</div></section>
+
 <section class="sec"><h2>The four <em>posts</em></h2><p class="sub">Suggested order, spaced across one to two weeks so each gets its own moment.</p>
-<div class="cards"><div class="card"><h3>1 · Before She Had a Name on Paper</h3><p>A new father calls from the hospital the day after his daughter is born, ready to start a policy before she has a Social Security number. <br><i>Format: quote card. Strongest opener.</i></p></div><div class="card"><h3>2 · The Countdown</h3><p>A client funding his daughter's wedding with policy loans sends the team unprompted countdown texts: “50 days!” <br><i>Format: countdown graphic or short video.</i></p></div><div class="card"><h3>3 · One Policy Became Four</h3><p>Met single in his twenties with one small policy; then one for each parent, his wife, and now his newborn. <br><i>Format: four-slide carousel.</i></p></div><div class="card"><h3>4 · He Remembered, a Month Later</h3><p>A client emails a month later to check on a team member and her new baby. It goes both ways. <br><i>Format: text-forward quote card. Closer.</i></p></div></div></section>
-<section class="sec"><h2>Status and <em>next steps</em></h2><div class="cards">
-<div class="card"><h3>Not done yet</h3><ul><li>Compliance sign-off on all four posts (truly anonymous, abstract framing)</li><li>Production and scheduling (Ruby, social production)</li><li>Visual direction using current brand standards</li><li>Optional persona-fit edit before production</li></ul></div>
-<div class="card"><h3>Grow the story bank <span class="badge b-exp">Proposed</span></h3><p>A quick poll or prompt to the field and team asking people to share stories like these privately with Rachel. She keeps them private and makes sure each one is vague and anonymized before anything is used. The aim is to grow the campaign from 4 posts to 8–10.</p></div>
-<div class="card"><h3>How we would measure it <span class="badge b-exp">Proposed</span></h3><ul><li>Engagement and reach by post and channel</li><li>Profile and site visits from the posts</li><li>Inbound conversations attributed to the series</li></ul></div></div></section>
+<div class="wk"><div>Opener</div><div>Post 2</div><div>Post 3</div><div>Closer</div></div>
+<div class="pc4">
+<div class="pcard"><div class="art"><b>1</b><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21c3 0 7-1 7-8V5H3v8h4M14 21c3 0 7-1 7-8V5h-7v8h4"/></svg><em>Strongest opener</em></div><div class="bd"><h3>Before She Had a Name on Paper</h3><p>A new father calls from the hospital the day after his daughter is born, ready to start a policy before she has a Social Security number.</p></div><div class="fm"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21c3 0 7-1 7-8V5H3v8h4M14 21c3 0 7-1 7-8V5h-7v8h4"/></svg>Quote card</div></div>
+<div class="pcard"><div class="art"><b>2</b><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><div class="bd"><h3>The Countdown</h3><p>A client funding his daughter's wedding with policy loans sends the team unprompted countdown texts: “50 days!”</p></div><div class="fm"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>Countdown graphic or short video</div></div>
+<div class="pcard"><div class="art"><b>3</b><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 10 5-10 5L2 7l10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></div><div class="bd"><h3>One Policy Became Four</h3><p>Met single in his twenties with one small policy; then one for each parent, his wife, and now his newborn.</p></div><div class="fm"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 10 5-10 5L2 7l10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>Four-slide carousel</div></div>
+<div class="pcard"><div class="art"><b>4</b><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></svg><em>Closer</em></div><div class="bd"><h3>He Remembered, a Month Later</h3><p>A client emails a month later to check on a team member and her new baby. It goes both ways.</p></div><div class="fm"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>Text-forward quote card</div></div>
+</div></section>
+
+<section class="sec"><h2>From story to <em>post</em></h2><p class="sub">Every story passes the same gates before anything is scheduled.</p>
+<div class="flow" style="--n:4">
+<div class="fs"><span class="n">1</span><span class="tag badge b-exp">Proposed</span><div class="icb"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5.1 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.5-6.9A2 2 0 0 0 16.8 4H7.2a2 2 0 0 0-1.7 1.1z"/></svg></div><h3>Field story poll</h3><p>Field and team share stories like these privately with Rachel.</p></div>
+<div class="fs"><span class="n">2</span><div class="icb"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3>Anonymize</h3><p>Rachel keeps them private and makes each one vague and anonymized.</p></div>
+<div class="fs"><span class="n">3</span><div class="icb"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Compliance sign-off</h3><p>Truly anonymous, abstract framing. Required before scheduling.</p></div>
+<div class="fs"><span class="n">4</span><div class="icb"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg></div><h3>Produce and schedule</h3><p>Ruby, social production, using current brand standards.</p></div>
+</div></section>
+
+<section class="sec"><h2>Status and <em>next steps</em></h2>
+<div class="split">
+<div class="pane"><h3><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Not done yet</h3><ul class="chk">
+<li><i class="bl"></i>Compliance sign-off on all four posts (truly anonymous, abstract framing)</li>
+<li><i class="bl"></i>Production and scheduling (Ruby, social production)</li>
+<li><i class="bl"></i>Visual direction using current brand standards</li>
+<li><i class="bl"></i>Optional persona-fit edit before production</li></ul></div>
+<div class="sbank"><h3 style="display:flex;gap:8px;align-items:center"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Grow the story bank <span class="badge b-exp">Proposed</span></h3>
+<p style="margin:0;font-size:14px">A quick poll or prompt to the field and team. The aim is to grow the campaign from 4 posts to 8–10.</p>
+<div class="sbt" role="img" aria-label="4 posts today, goal 8 to 10"><div class="now"></div><div class="goal"></div></div>
+<div class="sbl"><span style="left:40%">4 today</span><span style="left:100%">Goal 8–10</span></div>
+</div>
+</div>
+<div class="pane" style="margin-top:16px"><h3><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15v3M12 10v8M17 6v12"/></svg>How we would measure it <span class="badge b-exp">Proposed</span></h3><div class="chips"><span>Engagement and reach by post and channel</span><span>Profile and site visits from the posts</span><span>Inbound conversations attributed to the series</span></div></div>
+</section>
 </main>
 <footer><div class="in"><b>Paradigm Life</b> · Marketing · Draft for internal review, not for distribution. Working version as of October 2026.</div></footer>
 </body>
