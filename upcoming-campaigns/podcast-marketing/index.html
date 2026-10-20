@@ -7,19 +7,124 @@
 <title>Podcast Marketing | Paradigm Life</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
+<style>
+/* visual pass (page-scoped) */
+.ic{width:22px;height:22px;display:block;flex:none}
+.icb{width:38px;height:38px;border-radius:10px;background:var(--wash);color:var(--strong);display:flex;align-items:center;justify-content:center;flex:none}
+.icb.y{background:var(--tbd);color:var(--tbdtx)}.icb.b{background:#e8f3f9;color:#1d6f96}.icb.r{background:#fef3f4;color:#b0302f}.icb.d{background:var(--footer);color:#cfe8bf}
+.vhero{background:linear-gradient(135deg,#1e2f25 0%,#2c4a33 60%,#3f6b3a 100%);color:#e6efe2;border-radius:16px;padding:30px 34px;margin-top:16px;box-shadow:0 10px 30px rgba(30,47,37,.2)}
+.vhero h1{color:#fff;margin-top:6px}.vhero h1 em{color:#a8dc87}.vhero .eyebrow{color:#a8dc87}.vhero .lede{color:#dfe9da;font-size:17px;margin:0}
+.vhero a{color:#cfe8bf}
+.hchips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.hchip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:6px 12px;font:600 12.5px Montserrat,sans-serif;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none}
+.hchip .ic{width:15px;height:15px}.hchip.y{background:var(--tbd);color:var(--tbdtx);border-color:var(--tbd)}.hchip.g{background:#a8dc87;color:#1e2f25;border-color:#a8dc87}.hchip.b{background:#e8f3f9;color:#1d6f96;border-color:#e8f3f9}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:20px}
+.kpi{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:14px 16px}
+.kpi b{display:block;font:700 30px/1.1 Montserrat,sans-serif;color:#fff}.kpi span{font-size:13px;color:#cfe0c8}
+.kpis.lt .kpi{background:#fff;border:0;border-top:4px solid var(--brand);box-shadow:var(--sh)}.kpis.lt .kpi b{color:var(--ink)}.kpis.lt .kpi span{color:var(--body)}
+.ic-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.icard{background:#fff;border-radius:var(--r);box-shadow:var(--sh);padding:18px;border:1px solid #f0f1ee;display:flex;gap:12px;align-items:flex-start}
+.icard h3{margin:0 0 4px;font-size:16px}.icard p{margin:0;font-size:14.5px}.icard ul{margin:6px 0 0;padding-left:18px;font-size:14px}
+.icard.lb{border-left:4px solid var(--brand)}.icard.ly{border-left:4px solid #daa900}.icard.lr{border-left:4px solid #d9534f}
+.flow{display:grid;grid-template-columns:repeat(var(--n,4),1fr);gap:16px;margin-top:6px}
+.fs{position:relative;background:#fff;border-radius:14px;box-shadow:var(--sh);padding:22px 16px 16px;border-top:5px solid var(--brand)}
+.fs .n{position:absolute;top:-14px;left:14px;min-width:28px;height:28px;padding:0 8px;border-radius:999px;background:var(--footer);color:#fff;font:700 12.5px/28px Montserrat,sans-serif;text-align:center}
+.fs:not(:last-child)::after{content:"→";position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:var(--brand);font-weight:700;z-index:2}
+.fs h3{font-size:15.5px;margin:8px 0 4px}.fs p{margin:0;font-size:14px}.fs ul{margin:6px 0 0;padding-left:18px;font-size:13.5px}
+.fs .tag{position:absolute;top:-11px;right:12px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.chk{list-style:none;margin:0;padding:0}.chk li{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-top:1px solid var(--line);font-size:14.5px}.chk li:first-child{border-top:0}
+.chk .bl{width:10px;height:10px;border-radius:50%;border:2.5px solid var(--brand);margin-top:7px;flex:none}
+.chk .ok{width:18px;height:18px;color:var(--brand);margin-top:3px}
+.chk .q{width:18px;height:18px;color:#b08600;margin-top:3px}
+.pane{background:#fff;border-radius:var(--r);box-shadow:var(--sh);padding:18px 20px}
+.pane h3{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}.chips span{font-size:12.5px;background:var(--wash);color:#3e5f2b;border-radius:999px;padding:4px 10px}
+.chips.y span{background:var(--tbd);color:var(--tbdtx)}.chips.n span{background:#eef0f2;color:#54565a}
+.big{font:700 44px/1 Montserrat,sans-serif;color:var(--ink)}
+.diag{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.node{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--sh);display:flex;gap:10px;align-items:center;font:600 14px Montserrat,sans-serif;color:var(--ink)}
+.node.dk{background:var(--footer);color:#fff;border-color:var(--footer)}.node.gn{background:var(--wash);border-color:#cfe5c1}
+.arr{color:var(--brand);font:700 22px Montserrat,sans-serif}
+.branch{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.bar{display:grid;grid-template-columns:150px 1fr auto;gap:10px;align-items:center;font-size:13.5px;margin-top:8px}
+.bar .t{height:14px;background:#eef1ec;border-radius:7px;overflow:hidden}.bar .t i{display:block;height:100%;border-radius:7px;background:var(--brand)}
+.bar b{font:700 13px Montserrat,sans-serif;color:var(--ink);white-space:nowrap}
+.tl{position:relative;display:grid;grid-template-columns:repeat(var(--n,4),1fr);gap:8px;margin-top:10px}
+.tl::before{content:"";position:absolute;left:calc(50%/var(--n,4));right:calc(50%/var(--n,4));top:12px;height:4px;background:var(--line);border-radius:4px}
+.tp{position:relative;z-index:1;text-align:center;font-size:13px}
+.tp .d{width:26px;height:26px;border-radius:50%;margin:0 auto 8px;background:#fff;border:4px solid #b9c4b3}
+.tp.on .d{background:var(--brand);border-color:#d6ebc9}.tp.pd .d{border-color:#daa900}
+.tp b{display:block;font:700 14px Montserrat,sans-serif;color:var(--ink)}
+.oq{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.qc{background:#fff;border-radius:12px;box-shadow:var(--sh);padding:12px 14px;display:flex;gap:10px;font-size:14px}
+.qc .ic{width:18px;height:18px;color:#b08600;margin-top:2px}.qc.done .ic{color:var(--brand)}
+.gh{display:flex;align-items:center;gap:8px;font:600 12px Montserrat,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--strong);margin:22px 0 10px}
+.gh::after{content:"";flex:1;height:1px;background:var(--line)}
+.wbar{display:flex;height:16px;border-radius:8px;overflow:hidden;margin:8px 0}
+.wbar i{display:block;height:100%}
+main a{color:var(--strong)}
+@media(max-width:860px){.flow{grid-template-columns:1fr 1fr}.fs::after{display:none}.split,.oq,.branch{grid-template-columns:1fr}}
+@media(max-width:600px){.vhero{padding:24px 18px}.flow{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}.kpi b{font-size:26px}
+.tl{grid-template-columns:1fr;gap:12px}.tl::before{left:11px;right:auto;top:8px;bottom:8px;width:4px;height:auto}.tp{display:grid;grid-template-columns:26px 1fr;column-gap:12px;text-align:left}.tp .d{margin:0;grid-row:span 3}
+.bar{grid-template-columns:100px 1fr auto}.diag{flex-direction:column;align-items:stretch}.diag .arr{transform:rotate(90deg);align-self:center}.ic-cards{grid-template-columns:1fr}}
+</style><style>.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.lane{background:#fff;border-radius:14px;box-shadow:var(--sh);padding:18px;border-top:5px solid #b9c4b3}
+.lane.ih{border-top-color:var(--brand);background:linear-gradient(180deg,#fff,var(--wash))}
+.lane h3{display:flex;gap:8px;align-items:center}
+.proof{display:flex;gap:14px;align-items:flex-start;background:#fff;border-radius:14px;box-shadow:var(--sh);padding:18px;border-left:5px solid var(--brand);margin-top:16px}
+.proof .ic{width:30px;height:30px;color:var(--brand)}
+.proof p{margin:0}
+.chain{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:10px;font-size:13.5px}
+.chain span{background:var(--wash);border-radius:999px;padding:5px 11px;font:600 12.5px Montserrat,sans-serif;color:var(--ink)}.chain i{font-style:normal;color:var(--brand);font-weight:700}
+@media(max-width:760px){.two{grid-template-columns:1fr}}</style>
 </head>
 <body>
 <header class="top"><div class="in"><div class="wm">Paradigm <span>Life</span></div><div class="draft">Draft for leadership review</div></div></header>
 <main class="wrap">
 <a class="back" href="../">← All upcoming campaigns</a><a class="fwlink" href="../content-plan-framework/">Built on the Content Plan Framework</a>
-<div class="eyebrow" style="margin-top:16px">New campaign · Proposed</div>
+<div class="vhero">
+<div class="eyebrow">New campaign · Proposed</div>
 <h1>In-house <em>podcast marketing</em></h1>
-<p class="lede">Avalaunch turns our podcast into paid ad content, but organic promotion, such as announcing new episodes, isn't part of their scope. This proposed in-house component makes sure every episode reaches our audience.</p>
-<div class="note" style="margin-top:0"><b>Why it matters:</b> on an October 13 team call, a team member shared that a prospect found Paradigm Life after hearing John Stewart on a podcast, then became a client. A concrete sign that podcast exposure generates warm inbound.</div>
+<p class="lede">Organic promotion so every episode reaches our audience. All tactics are proposed and not yet resourced.</p>
+<div class="kpis"><div class="kpi"><b>8</b><span>proposed tactics</span></div><div class="kpi"><b>3</b><span>proposed measures</span></div></div>
+<div class="hchips"><span class="hchip b"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Proposed · not yet resourced</span><span class="hchip y"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>Owner and hours to be confirmed</span></div>
+</div>
+
+<div class="proof"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21c3 0 7-1 7-8V5H3v8h4M14 21c3 0 7-1 7-8V5h-7v8h4"/></svg><div><p><b>Why it matters.</b> On an October 13 team call, a team member shared that a prospect found Paradigm Life after hearing John Stewart on a podcast, then became a client. A concrete sign that podcast exposure generates warm inbound.</p>
+<div class="chain"><span>Heard John Stewart on a podcast</span><i>→</i><span>Found Paradigm Life</span><i>→</i><span>Became a client</span></div></div></div>
+
+<section class="sec"><h2>Who does <em>what</em></h2>
+<div class="two">
+<div class="lane"><h3><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>Avalaunch</h3><p style="margin:0;font-size:14.5px">Turns the podcast into paid ad content. Organic promotion, such as announcing new episodes, isn't part of their scope.</p></div>
+<div class="lane ih"><h3><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4"/></svg>In-house <span class="badge b-exp">Proposed</span></h3><p style="margin:0;font-size:14.5px">Organic promotion of every episode: the tactics below.</p></div>
+</div></section>
+
+<section class="sec"><h2>One episode, <em>many touchpoints</em> <span class="badge b-exp">Proposed</span></h2>
+<div class="flow" style="--n:4">
+<div class="fs"><span class="n">1</span><div class="icb"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 0 0-2.9-.1z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.9A12.9 12.9 0 0 1 22 2c0 2.7-.8 7.5-6 11a22 22 0 0 1-4 2z"/></svg></div><h3>Goes live</h3><p>Launch post on each social channel; newsletter and email blurb.</p></div>
+<div class="fs"><span class="n">2</span><div class="icb"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></div><h3>Clip it</h3><p>Short video and audio clips of the strongest moments.</p></div>
+<div class="fs"><span class="n">3</span><div class="icb"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></div><h3>Write it up</h3><p>Show notes and a companion blog post with a topic-matched CTA.</p></div>
+<div class="fs"><span class="n">4</span><div class="icb"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></div><h3>Repurpose</h3><p>Carousels, articles and Sacred Cows pieces.</p></div>
+</div></section>
+
 <section class="sec"><h2>Proposed <em>tactics</em></h2><p class="sub">All items below are proposed and not yet resourced.</p>
-<div class="cards"><div class="card"><h3>Episode launch posts <span class="badge b-exp">Proposed</span></h3><p>A consistent post on each social channel when an episode goes live.</p></div><div class="card"><h3>Newsletter and email blurbs <span class="badge b-exp">Proposed</span></h3><p>A short episode feature in the newsletter and relevant HubSpot emails.</p></div><div class="card"><h3>Clips and audiograms <span class="badge b-exp">Proposed</span></h3><p>Short video and audio clips of the strongest moments for social.</p></div><div class="card"><h3>Guest cross-promotion <span class="badge b-exp">Proposed</span></h3><p>Share-ready assets for guests, and appearances on outside podcasts as PR relationships develop.</p></div><div class="card"><h3>Show notes and blog posts <span class="badge b-exp">Proposed</span></h3><p>Show notes and a companion blog post per episode, with a CTA matched to the topic.</p></div><div class="card"><h3>YouTube and Spotify optimization <span class="badge b-exp">Proposed</span></h3><p>Titles, descriptions, chapters, thumbnails and playlists tuned for discovery.</p></div><div class="card"><h3>Content repurposing <span class="badge b-exp">Proposed</span></h3><p>Feed episodes into the internal content program: carousels, articles, Sacred Cows pieces.</p></div><div class="card"><h3>Tracking <span class="badge b-exp">Proposed</span></h3><p>UTMs and source tracking so podcast-driven visits and opportunities show up in HubSpot.</p></div></div></section>
-<section class="sec"><div class="grid2"><div class="card"><h3>Open questions</h3><ul><li>Owner and weekly hours</li><li>Which channels and cadence come first</li><li>How it coordinates with Avalaunch's paid podcast content</li><li>How podcast-sourced leads are labeled in HubSpot</li></ul></div>
-<div class="card"><h3>How we would measure it <span class="badge b-exp">Proposed</span></h3><ul><li>Downloads and views per episode, by platform</li><li>Clicks and visits from podcast promotion</li><li>Inbound conversations and opportunities citing the podcast</li></ul></div></div></section>
+<div class="ic-cards">
+<div class="icard "><div class="icb "><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div><div><h3>Episode launch posts <span class="badge b-exp">Proposed</span></h3><p>A consistent post on each social channel when an episode goes live.</p></div></div>
+<div class="icard "><div class="icb "><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div><div><h3>Newsletter and email blurbs <span class="badge b-exp">Proposed</span></h3><p>A short episode feature in the newsletter and relevant HubSpot emails.</p></div></div>
+<div class="icard "><div class="icb "><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></div><div><h3>Clips and audiograms <span class="badge b-exp">Proposed</span></h3><p>Short video and audio clips of the strongest moments for social.</p></div></div>
+<div class="icard "><div class="icb "><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><h3>Guest cross-promotion <span class="badge b-exp">Proposed</span></h3><p>Share-ready assets for guests, and appearances on outside podcasts as PR relationships develop.</p></div></div>
+<div class="icard "><div class="icb "><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></div><div><h3>Show notes and blog posts <span class="badge b-exp">Proposed</span></h3><p>Show notes and a companion blog post per episode, with a CTA matched to the topic.</p></div></div>
+<div class="icard "><div class="icb "><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div><div><h3>YouTube and Spotify optimization <span class="badge b-exp">Proposed</span></h3><p>Titles, descriptions, chapters, thumbnails and playlists tuned for discovery.</p></div></div>
+<div class="icard "><div class="icb "><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></div><div><h3>Content repurposing <span class="badge b-exp">Proposed</span></h3><p>Feed episodes into the internal content program: carousels, articles, <a href="../sacred-cows/">Sacred Cows</a> pieces.</p></div></div>
+<div class="icard "><div class="icb "><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></div><div><h3>Tracking <span class="badge b-exp">Proposed</span></h3><p>UTMs and source tracking so podcast-driven visits and opportunities show up in HubSpot.</p></div></div>
+</div></section>
+
+<section class="sec"><div class="split">
+<div class="pane"><h3><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg>Open questions</h3><ul class="chk">
+<li><svg class="ic q" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg>Owner and weekly hours</li><li><svg class="ic q" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg>Which channels and cadence come first</li><li><svg class="ic q" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg>How it coordinates with Avalaunch's paid podcast content</li><li><svg class="ic q" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg>How podcast-sourced leads are labeled in HubSpot</li></ul></div>
+<div class="pane"><h3><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15v3M12 10v8M17 6v12"/></svg>How we would measure it <span class="badge b-exp">Proposed</span></h3><div class="chips"><span>Downloads and views per episode, by platform</span><span>Clicks and visits from podcast promotion</span><span>Inbound conversations and opportunities citing the podcast</span></div></div>
+</div></section>
 </main>
 <footer><div class="in"><b>Paradigm Life</b> · Marketing · Draft for internal review, not for distribution. Working version as of October 2026.</div></footer>
 </body>
