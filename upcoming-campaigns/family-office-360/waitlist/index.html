@@ -71,6 +71,46 @@ section .eyebrow{color:var(--pine)}
 footer{margin-top:72px;background:var(--evergreen);color:#c9d6d4;font-size:14px}
 footer .wrap{padding:28px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
 footer img{height:34px;width:auto}
+
+.ic{width:24px;height:24px;display:block}
+.icbox{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:#e6f6ee;color:var(--pine);margin-bottom:14px}
+/* status stepper */
+.status{margin-top:22px;background:#fff;border-radius:16px;padding:26px 30px}
+.status-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+.status-head b{font-size:17px}
+.pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:5px 12px;font:600 12px/1 "Stack Sans Text",sans-serif;letter-spacing:.06em;text-transform:uppercase}
+.pill-wait{background:#fff4e0;color:#8a5a00}.pill-live{background:#e6f6ee;color:#0a7a4c}
+.track{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.track::before{content:"";position:absolute;left:16.6%;right:16.6%;top:15px;height:4px;border-radius:4px;background:var(--stone)}
+.track::after{content:"";position:absolute;left:16.6%;width:14%;top:15px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--jade),#7fd8b0)}
+.stg{position:relative;text-align:center;z-index:1}
+.stg .d{width:34px;height:34px;border-radius:50%;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;background:#fff;border:3px solid var(--stone);color:var(--sage)}
+.stg.now .d{border-color:var(--jade);background:var(--jade);color:#fff;box-shadow:0 0 0 6px rgba(3,176,109,.15)}
+.stg .d .ic{width:16px;height:16px}
+.stg b{display:block;font-size:15px}.stg span{font-size:13px;color:var(--eucalyptus)}
+.stg.now b{color:var(--pine)}
+/* family circle */
+.circle{position:relative;aspect-ratio:1/1;max-width:420px;margin:0 auto;width:100%}
+.circle .ring{position:absolute;inset:12%;border-radius:50%;border:2px dashed var(--sage)}
+.circle .core{position:absolute;inset:34%;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,52,55,.12)}
+.circle .core img{width:56%;height:auto}
+.node{position:absolute;transform:translate(-50%,-50%);background:var(--evergreen);color:#fff;border-radius:999px;padding:9px 14px;font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.node .ic{width:16px;height:16px}
+.node.j{background:var(--jade);color:var(--evergreen)}.node.p{background:var(--pine)}.node.s{background:#fff;color:var(--evergreen);border:1px solid var(--stone)}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px;counter-reset:s}
+.step{position:relative;background:#fff;border-radius:14px;padding:22px;border-top:4px solid var(--sage)}
+.step.live{border-top-color:var(--jade)}
+.step .n{position:absolute;top:-14px;left:18px;width:26px;height:26px;border-radius:50%;background:var(--evergreen);color:#fff;font:600 13px/26px "Stack Sans Text",sans-serif;text-align:center}
+.step .tag{position:absolute;top:-12px;right:14px}
+.step h3{font-size:20px;margin:8px 0 4px}.step p{margin:0;font-size:14px;color:var(--pine)}
+.step:not(:last-child)::after{content:"→";position:absolute;right:-13px;top:50%;transform:translateY(-50%);color:var(--jade);font-weight:700;z-index:2}
+.vcard h3,.tile h3{font-size:21px;margin:0 0 4px}.vcard p,.tile p{margin:0;font-size:14.5px;color:var(--pine)}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+.tile{background:#fff;border-radius:14px;padding:22px}
+@media(max-width:900px){.steps,.tiles{grid-template-columns:1fr 1fr}.step:nth-child(2)::after{display:none}}
+@media(max-width:520px){.steps,.tiles{grid-template-columns:1fr}.step::after{display:none}.track{grid-template-columns:1fr;gap:16px}.track::before,.track::after{display:none}.stg{display:flex;gap:12px;align-items:center;text-align:left}.stg .d{margin:0}.node{font-size:12px;padding:7px 10px}.circle{max-width:300px}.node.j{left:80%!important}.node.s{left:20%!important}.tiles,.values{grid-template-columns:1fr 1fr!important}.tile,.vcard{padding:16px!important}.tile h3,.vcard h3{font-size:18px}}
+
 @media(max-width:900px){.hero{grid-template-columns:1fr;padding:40px 26px}.hero h1{font-size:42px}.split{grid-template-columns:1fr}.values{grid-template-columns:1fr 1fr}.gets{grid-template-columns:1fr}.cta{padding:36px 26px}section h2.serif{font-size:32px}}
 @media(max-width:520px){.values{grid-template-columns:1fr}.wrap{padding:0 18px}.tagline{font-size:20px}}
 </style>
@@ -87,8 +127,8 @@ footer img{height:34px;width:auto}
 <h1 class="serif">Family Office 360™ is launching soon</h1>
 <p><span class="flag">Headline wording pending: “launching soon / coming soon” needs leadership approval</span></p>
 <p class="tagline serif">Clarity for today.<br>Continuity for generations.</p>
-<p class="lede">One connected place for your family's financial life, built around your family and the people who help you. <span class="draftcopy">Draft copy</span></p>
-<span class="notopen"><i></i>Family Office 360 isn't open yet. Join the waitlist to hear first.</span>
+<p class="lede">Your family's financial life, connected in one place. <span class="draftcopy">Draft copy</span></p>
+<span class="notopen"><i></i>Not open yet · Waitlist forming</span>
 </div>
 <form class="formcard" onsubmit="return false" aria-label="Waitlist form mockup">
 <h2 class="serif">Join the waitlist</h2>
@@ -101,41 +141,60 @@ footer img{height:34px;width:auto}
 </form>
 </div>
 
+<div class="status" role="group" aria-label="Launch status">
+<div class="status-head"><b>Where Family Office 360 is today</b><span class="pill pill-wait"><svg class="ic" style="width:14px;height:14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Not open yet</span></div>
+<div class="track">
+<div class="stg now"><div class="d"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div><b>Waitlist forming</b><span>You are here</span></div>
+<div class="stg"><div class="d"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div><b>Early access</b><span>Current clients first</span></div>
+<div class="stg"><div class="d"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div><b>Doors open</b><span>Date to be announced</span></div>
+</div></div>
+
 <section>
 <div class="split">
 <div>
 <div class="eyebrow">Built for families, together</div>
-<h2 class="serif">Your family's financial life, in one connected place</h2>
-<p class="intro">Family Office 360 brings the different parts of family wealth into one connected experience, so everyone can see the full picture, make confident decisions and prepare for what comes next. It's built for families across generations, with a team and a community around you. <span class="draftcopy">Draft copy</span></p>
+<h2 class="serif">Everyone around one table</h2>
+<p class="intro">You, your family and your team, connected in one place across generations. <span class="draftcopy">Draft copy</span></p>
 </div>
-<div class="panel" aria-hidden="true"><img src="fo360-logo-white.svg" alt=""></div>
+<div class="circle" aria-hidden="true"><div class="ring"></div><div class="core"><img src="fo360-symbol.svg" alt=""></div>
+<div class="node" style="left:50%;top:12%"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Your family</div>
+<div class="node j" style="left:86%;top:50%"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>You</div>
+<div class="node p" style="left:50%;top:88%"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.18 8.5a4 4 0 1 1 0 7c-2.2 0-3.9-1.9-6.18-3.5C9.72 10.4 8 8.5 5.82 8.5a4 4 0 1 0 0 7c2.2 0 3.9-1.9 6.18-3.5 2.28-1.6 3.98-3.5 6.18-3.5z"/></svg>Next generation</div>
+<div class="node s" style="left:14%;top:50%"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Your team</div>
+</div>
 </div>
 </section>
 
 <section>
 <div class="eyebrow">What guides us</div>
 <h2 class="serif">The principles behind Family Office 360</h2>
-<div class="values">
-<div class="vcard"><span class="sq" style="background:#1B5552"></span><h3 class="serif">Connection</h3><p>We bring information, professional guidance and family priorities together in one coordinated experience.</p></div>
-<div class="vcard"><span class="sq" style="background:#b9e7c9"></span><h3 class="serif">Confidence</h3><p>We give families the knowledge and support they need to make informed financial decisions.</p></div>
-<div class="vcard"><span class="sq" style="background:#66837F"></span><h3 class="serif">Continuity</h3><p>We take a long-term view, helping families develop and carry their financial legacy forward.</p></div>
-<div class="vcard"><span class="sq" style="background:#03B06D"></span><h3 class="serif">Clarity</h3><p>We simplify financial complexity, making information easier to understand and act upon.</p></div>
+<div class="values"><div class="vcard"><div class="icbox"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3 class="serif">Connection</h3><p>Family, guidance and information together.</p></div><div class="vcard"><div class="icbox"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3 class="serif">Confidence</h3><p>The support to make informed decisions.</p></div><div class="vcard"><div class="icbox"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.18 8.5a4 4 0 1 1 0 7c-2.2 0-3.9-1.9-6.18-3.5C9.72 10.4 8 8.5 5.82 8.5a4 4 0 1 0 0 7c2.2 0 3.9-1.9 6.18-3.5 2.28-1.6 3.98-3.5 6.18-3.5z"/></svg></div><h3 class="serif">Continuity</h3><p>A long-term view, across generations.</p></div><div class="vcard"><div class="icbox"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div><h3 class="serif">Clarity</h3><p>Complexity made simple to act on.</p></div></div>
+</section>
+
+<section>
+<div class="eyebrow">How it works</div>
+<h2 class="serif">From waitlist to one connected place</h2>
+<div class="steps">
+<div class="step"><span class="n">1</span><div class="icbox"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div><h3 class="serif">Join the waitlist</h3><p>First name and email.</p></div>
+<div class="step live"><span class="n">2</span><span class="tag pill pill-live">Live now</span><div class="icbox"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></div><h3 class="serif">Take your Wealth Score</h3><p>See where you stand today.</p></div>
+<div class="step"><span class="n">3</span><div class="icbox"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></div><h3 class="serif">Hear first</h3><p>We'll tell you when doors open.</p></div>
+<div class="step"><span class="n">4</span><div class="icbox"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></div><h3 class="serif">Keep moving</h3><p>Return each year through the four steps.</p></div>
 </div>
 </section>
 
 <section>
 <div class="eyebrow">What you'll get</div>
 <h2 class="serif">What to expect <span class="draftcopy">Draft copy</span></h2>
-<ul class="gets">
-<li><b>One place for your strategy</b><span>Your Paradigm Life wealth strategy, organized in one portal.</span></li>
-<li><b>Your Wealth Score</b><span>Start with the Wealth Score assessment and report to see where you stand today.</span></li>
-<li><b>A clear yearly rhythm</b><span>Return each year and keep moving through the four steps.</span></li>
-<li><b>Early access for clients</b><span>Current clients may get access first, before the public launch.</span></li>
-</ul>
+<div class="tiles">
+<div class="tile"><div class="icbox"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 10 5-10 5L2 7l10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></div><h3 class="serif">One place</h3><p>Your wealth strategy, organized in one portal.</p></div>
+<div class="tile"><div class="icbox"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></div><h3 class="serif">Your Wealth Score</h3><p>An assessment and report to start from.</p></div>
+<div class="tile"><div class="icbox"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></div><h3 class="serif">A yearly rhythm</h3><p>Keep moving through the four steps.</p></div>
+<div class="tile"><div class="icbox"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div><h3 class="serif">Clients first</h3><p>Current clients may get early access.</p></div>
+</div>
 </section>
 
 <div class="cta">
-<div><h2 class="serif">Be first to know</h2><p>Join the waitlist and we'll let you know when Family Office 360 opens. No launch date yet.</p></div>
+<div><h2 class="serif">Be first to know</h2><p>Not open yet. Join the waitlist and we'll let you know when doors open.</p></div>
 <a class="btn" href="#wfn">Join the waitlist</a>
 </div>
 </div>
