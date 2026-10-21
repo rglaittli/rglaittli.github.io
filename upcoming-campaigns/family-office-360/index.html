@@ -110,6 +110,25 @@ main a{color:var(--pine)}
 .tl{grid-template-columns:1fr;gap:14px;padding-left:4px}.tl::before{left:17px;right:auto;top:10px;bottom:10px;width:4px;height:auto}.tl::after{display:none}.tp{display:grid;grid-template-columns:28px 1fr;column-gap:12px;text-align:left}.tp .d{margin:0;grid-row:span 3}
 .redir{grid-template-columns:1fr}.redir .arrow{transform:rotate(90deg);justify-self:start}.stat b{font-size:28px}}
 .chips{display:flex;flex-wrap:wrap;gap:6px}.chips span{font-size:13px;background:#e6f6ee;color:var(--pine);border-radius:999px;padding:5px 12px}
+.why{margin:18px 0 6px;background:#fff;border-radius:16px;box-shadow:0 2px 12px rgba(0,52,55,.08);border-top:5px solid var(--jade);padding:16px 18px}
+.why .wh{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:space-between;margin:0 0 12px}
+.why .wh h2{margin:0;font-size:19px;color:var(--ever)}.why .wh p{margin:0;font-size:13px;color:var(--euc)}
+.why .wg{display:grid;grid-template-columns:1.35fr 1fr 1fr .7fr;gap:12px}
+.why .wp{background:var(--shell);border-radius:12px;padding:12px}
+.why .wp .k{display:flex;gap:6px;align-items:center;font:700 11px Montserrat,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--pine);margin:0 0 8px}
+.why .wp .k b{width:18px;height:18px;border-radius:50%;background:var(--ever);color:#fff;display:grid;place-items:center;font-size:10.5px;letter-spacing:0}
+.cvj{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin:0 0 6px}
+.cvj span{display:flex;flex-direction:column;align-items:center;gap:2px;font:600 11px/1.15 Montserrat,sans-serif;color:#8fa19f;text-align:center;padding:6px 1px;border-radius:6px;background:#fff;border:1px solid var(--stone)}
+.cvj span i{font-style:normal;font-size:11px;font-weight:700}
+.cvj span.on{background:var(--jade);border-color:var(--jade);color:#fff}
+.cvj span.pt{background:#e6f6ee;border-color:#9fdcc0;color:var(--pine)}
+.cvjl{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:11.5px;color:var(--euc)}.cvjl i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+.why .wp p{margin:6px 0 0;font-size:12.5px;line-height:1.4;color:var(--body)}
+.steps3{display:grid;gap:5px}.steps3 span{display:flex;gap:7px;align-items:flex-start;font-size:13px;line-height:1.35;color:var(--ink)}.steps3 span b{flex:0 0 18px;height:18px;border-radius:50%;background:#e6f6ee;color:var(--pine);display:grid;place-items:center;font:700 10.5px Montserrat,sans-serif;margin-top:1px}
+.mchips{display:flex;flex-wrap:wrap;gap:5px}.mchips span{font-size:12px;background:#fff;border:1px solid var(--stone);border-radius:999px;padding:4px 9px;color:var(--ink)}
+.sign{display:flex;flex-direction:column;gap:6px;align-items:flex-start}.sign .badge{margin-left:0}
+@media(max-width:900px){.why .wg{grid-template-columns:1fr 1fr}.why .wg .wp:first-child{grid-column:1/-1}}
+@media(max-width:560px){.why .wg{grid-template-columns:1fr}.cvj{grid-template-columns:repeat(4,minmax(0,1fr))}.cvj span{font-size:10.5px}}
 </style>
 </head>
 <body>
@@ -129,6 +148,20 @@ main a{color:var(--pine)}
 <div class="stat"><b>~6,200</b><span>active households</span></div>
 </div>
 </div>
+
+<div class="why" id="why"><div class="wh"><h2>Why we're making this</h2><p>Internal call to action · not reader-facing</p></div>
+<div class="wg">
+<div class="wp"><div class="k"><b>1</b>Journey stage</div>
+<div class="cvj" role="img" aria-label="Client Value Journey: FO360 serves Excite, Ascend, Advocate and Promote; the waitlist supports Subscribe"><span class=""><i>1</i>Aware</span><span class=""><i>2</i>Engage</span><span class="pt"><i>3</i>Subscribe</span><span class=""><i>4</i>Convert</span><span class="on"><i>5</i>Excite</span><span class="on"><i>6</i>Ascend</span><span class="on"><i>7</i>Advocate</span><span class="on"><i>8</i>Promote</span></div>
+<div class="cvjl"><span><i style="background:var(--jade)"></i>FO360 current-client journey</span><span><i style="background:#e6f6ee;border:1px solid #9fdcc0"></i>Waitlist supports</span></div>
+<p>The current-client journey: keeps households coming back after the first sale. Ascend is the core; Advocate and Promote are the stages with the least coverage today.</p></div>
+<div class="wp"><div class="k"><b>2</b>The one action</div>
+<div class="steps3"><span><b>1</b>Join the waitlist now</span><span><b>2</b>Come back each year for the four steps and the annual review</span><span><b>3</b>Introduce friends and family (referral button, timing depends on the dev team)</span></div></div>
+<div class="wp"><div class="k"><b>3</b>How we'll know it worked</div>
+<div class="mchips"><span>Waitlist sign-ups</span><span>Registrations and active use</span><span>Four steps completed each year</span><span>Annual reviews held</span><span>Referrals submitted</span></div>
+<p>Baselines and targets to be set; tracked in HubSpot by portal-created contacts.</p></div>
+<div class="wp sign"><div class="k"><b>4</b>Sign-off</div><span class="badge b-tbd">Pending leadership approval</span></div>
+</div></div>
 
 <div class="duo">
 <div class="panel lj" id="positioning"><div class="icb"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></svg></div><div><h3>Positioning: community and family</h3><p>FO360 leans hard into building community and a family feel. Garrett Gunderson's Multiplier framework is inspiration only; our tone and feel are our own.</p><div class="loop" style="margin-top:10px"><span>Social: internal and external voices</span><span>Within the portal</span><span>Expand what we already have</span></div><p style="margin-top:8px;font-size:13.5px"><span class="badge b-exp" style="margin-left:0">Proposed</span> Make our community more visible: on social, with internal and external voices, and within the portal. Frame it as expanding and being more active in the community we already have, not building one from scratch.</p></div></div>
