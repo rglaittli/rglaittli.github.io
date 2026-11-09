@@ -376,7 +376,7 @@ It is for people who want to understand how everyday decisions about cash flow, 
 Episodes cover cash flow, home equity and liquidity, family and money, investing versus gambling, and how investors read economic news. Start with E.477 House Rich, Cash Poor (https://podcasts.apple.com/us/podcast/e-477-house-rich-cash-poor/id265016383?i=1000786355797), E.478 The Family Fight (https://podcasts.apple.com/us/podcast/e-478-the-family-fight/id265016383?i=1000786355633), or E.475 The Investor's Read: Jobs, Market Sentiment + the Fear Paradox (https://podcasts.apple.com/us/podcast/e-475-the-investors-read-jobs-market-sentiment-the/id265016383?i=1000786355579).
 
 **5. Which episode should I start with?**  
-If most of your wealth is tied up in your home, start with E.477 House Rich, Cash Poor (https://podcasts.apple.com/us/podcast/e-477-house-rich-cash-poor/id265016383?i=1000786355797). If you want a clearer read on where you stand, listen to E.483 How Healthy Is Your Financial Picture? (https://podcasts.apple.com/us/podcast/e-483-how-healthy-is-your-financial-picture-taking/id265016383?i=1000796701914). If cash flow is the open question, start with E.486 Cash Flow is the Gate (https://podcasts.apple.com/us/podcast/e-486-cash-flow-is-the-gate/id265016383?i=1000800322683). If you want the 4321 system laid out, start with E.481 Why Skipping Ahead Never Actually Gets You Ahead (https://podcasts.apple.com/us/podcast/e-481-why-skipping-ahead-never-actually-gets-you-ahead/id265016383?i=1000792906552).
+If most of your wealth is tied up in your home, start with E.477 House Rich, Cash Poor (https://podcasts.apple.com/us/podcast/e-477-house-rich-cash-poor/id265016383?i=1000786355797). If you want a clearer read on where you stand, listen to E.483 How Healthy Is Your Financial Picture? (https://podcasts.apple.com/us/podcast/e-483-how-healthy-is-your-financial-picture-taking/id265016383?i=1000796701914). If cash flow is the open question, start with E.486 Cash Flow is the Gate (https://podcasts.apple.com/us/podcast/e-486-cash-flow-is-the-gate/id265016383?i=1000800322683). If you want the 4-3-2-1 System laid out, start with E.481 Why Skipping Ahead Never Actually Gets You Ahead (https://podcasts.apple.com/us/podcast/e-481-why-skipping-ahead-never-actually-gets-you-ahead/id265016383?i=1000792906552).
 
 **6. Where can I listen to or watch The Perpetual Wealth Podcast?**  
 Listen on Apple Podcasts (https://podcasts.apple.com/us/podcast/the-perpetual-wealth-podcast/id265016383) or Spotify (https://open.spotify.com/show/08iIRqJgT7X9UnbrHGF9A3), or watch the YouTube All Episodes playlist (https://www.youtube.com/playlist?list=PL6ZUhtyHuVhFnPyTljFU4SmhOzaZYnqKh). You can also use the Spotify player on this page.
@@ -392,7 +392,7 @@ Also keep FAQPage JSON-LD in page head in sync with these eight Q&As.
 
 ### FAQ revision (same day)
 - Q2: Patrick only; joined by wealth strategists/colleagues/experts (no other names).
-- Q5: plain sentences (no arrows); added E.481 as 4321-system starting point (no episode titled "4321" found; E.481 Apple description covers the framework).
+- Q5: plain sentences (no arrows); added E.481 as 4-3-2-1 System starting point (no episode titled "4-3-2-1" found; E.481 Apple description covers the framework).
 - Strategy link (FAQ Q8): https://paradigmlife.net/perpetual-wealth-strategy-grow-wealth/
 
 ### Strategy URL swap (Nov 9, 2026)
