@@ -153,3 +153,7 @@ Hero promise (“Most financial stress is not a bad investment…”) is adapted
 - [ ] HubSpot email form wired  
 - [ ] Trinity review of “What you will hear”  
 - [ ] Rachel publish OK
+
+## Quote strip revision (Nov 9, 2026 — Rachel keep + diversify)
+
+Kept: (1) cash-flow-is-the-gate long quote, (2) same gate theme covered by #1, (3) reserves / life is not a straight line, (4) write-certain-rules (short form). Dropped redundant E.485/E.486 lines. Added diverse quotes from E.485 (certainty/uncertainty), E.484 (straight lines; financial picture), E.482 (ecosystem vs one sliver), E.480 (four dimensions). Full provenance in `QUOTE-SOURCES.md`. Host photo remains Rachel's original mic-behind headshot.
