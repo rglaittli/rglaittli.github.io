@@ -2,21 +2,285 @@
 
 **Status:** Mockup only. Do not publish until Rachel approves.  
 **Mockup:** https://rglaittli.github.io/upcoming-campaigns/podcast-landing-page/  
-**Suggested HubSpot slug:** `/podcast` on `learn.paradigmlife.net`  
-**Owner for publish OK:** Rachel (launches). Patrick for concept.
+**Production URL / slug:** `https://paradigmlife.net/podcast/` (replace the current WordPress page)  
+**Owner for publish OK:** Rachel (launches). Patrick for concept. Trinity for copy. Whitney for compliance before launch.
 
 ---
 
-## Round 3 mockup notes (Nov 9, 2026)
+## SEO / AEO (production HubSpot ONLY)
 
-- Header uses horizontal lockup: `/workspace/pwp-banner/pwp_horizontal_white_transparent.png` (copied to mockup as `pwp-lockup-horizontal-white.png`). White on transparent for the black page.
-- Hero is taller: copy left + large ghosted shield right. Spotify is **full width** under the hero (height 352).
-- YouTube section: **no big iframe**. Three custom-thumbnail cards only.
+### Critical robots / indexing rule
+- **GitHub Pages mockup stays `noindex,nofollow`** with the draft footer. Do not index the mockup.
+- **In HubSpot production:** remove the robots noindex. Set indexable. Add the canonical below.
+- Share image file to upload in HubSpot: `og-share.png` (1200×630) from the mockup folder (also `og-share.webp`).
 
-- Quote strip: skinny auto-slider between Spotify player and “What you will hear”; gold quote mark; 6s auto-advance; pause on hover; swipe on mobile; respects prefers-reduced-motion. Sources in QUOTE-SOURCES.md.
-- Host photo: Rachel-selected AI placeholder (mic behind him), `patrick-host.jpg`.
-- E.486 custom YouTube thumbnail (blue, EP. 486): `/workspace/thumbnails/ep486/E486-cash-flow-is-the-gate.png` (1280×720). Live YouTube `VHeVcar4oCg` maxres currently shows an **auto video frame** of Patrick (not this custom art). Rachel can re-upload the custom thumb in YouTube Studio; mockup already uses our file on the card.
-- Ghosted shield background retained; no episode cover in the hero.
+### Exact title / meta / slug / canonical
+| Field | Value |
+|---|---|
+| Title tag | `Perpetual Wealth Podcast | Patrick Donohoe` (42 chars) |
+| Meta description | `Listen to The Perpetual Wealth Podcast with Patrick Donohoe. Weekly episodes on cash flow, financial freedom, and rebuilding the system under stress.` (149 chars) |
+| Slug | `/podcast` |
+| Canonical | `https://paradigmlife.net/podcast/` |
+| OG image | `https://paradigmlife.net/podcast/og-share.png` (upload asset; update absolute URL if HubSpot CDN path differs) |
+
+### Primary / secondary keywords (intent-ranked; no invented volumes)
+No paid search-volume tool was available this pass. Ranked by brand intent and competitor-page patterns:
+
+1. **Primary:** `perpetual wealth podcast` (branded navigational; must win)
+2. **Secondary:** `patrick donohoe podcast` (host navigational)
+3. **Secondary:** `cash flow podcast` (high topical fit to current episodes)
+4. **Secondary:** `financial freedom podcast` / `wealth podcast` (category; competitive)
+5. **Affinity (use carefully in FAQ/body, not as primary H1):** `infinite banking podcast`, `whole life insurance podcast` (topic overlap; page frames them as system conversations, not product pitches)
+
+Current live WP page title/meta are weak: title `Podcast - Paradigm Life`; description mentions "Paradigm Life and Wealth Standard podcast" and is stale. Replace entirely.
+
+### 301 / feed replacement notes
+- Keep URL `https://paradigmlife.net/podcast/` so existing backlinks stay. If HubSpot must use `learn.paradigmlife.net/podcast`, 301 from paradigmlife.net/podcast to the HubSpot URL and set canonical to the final public URL.
+- **Replace all old Libsyn / old Apple (id 1494982325) / old Spotify (show/2h4fJ5RGR5QsoMrLOB8SVs) links** with the new Riverside feed and current platform IDs (table below).
+
+### Head HTML to paste (production: NO noindex)
+
+```html
+<meta name="description" content="Listen to The Perpetual Wealth Podcast with Patrick Donohoe. Weekly episodes on cash flow, financial freedom, and rebuilding the system under stress.">
+<link rel="canonical" href="https://paradigmlife.net/podcast/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Paradigm Life">
+<meta property="og:title" content="Perpetual Wealth Podcast | Patrick Donohoe">
+<meta property="og:description" content="Listen to The Perpetual Wealth Podcast with Patrick Donohoe. Weekly episodes on cash flow, financial freedom, and rebuilding the system under stress.">
+<meta property="og:url" content="https://paradigmlife.net/podcast/">
+<meta property="og:image" content="https://paradigmlife.net/podcast/og-share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Perpetual Wealth Podcast | Patrick Donohoe">
+<meta name="twitter:description" content="Listen to The Perpetual Wealth Podcast with Patrick Donohoe. Weekly episodes on cash flow, financial freedom, and rebuilding the system under stress.">
+<meta name="twitter:image" content="https://paradigmlife.net/podcast/og-share.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://paradigmlife.net/#organization",
+      "name": "Paradigm Life",
+      "url": "https://paradigmlife.net/",
+      "logo": "https://paradigmlife.net/wp-content/uploads/paradigm-life-logo.png"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://paradigmlife.net/podcast/#patrick-donohoe",
+      "name": "Patrick Donohoe",
+      "jobTitle": "CEO",
+      "worksFor": {
+        "@id": "https://paradigmlife.net/#organization"
+      },
+      "url": "https://paradigmlife.net/podcast/",
+      "sameAs": [
+        "https://www.youtube.com/@ParadigmLife",
+        "https://open.spotify.com/show/08iIRqJgT7X9UnbrHGF9A3",
+        "https://podcasts.apple.com/us/podcast/the-perpetual-wealth-podcast/id265016383"
+      ]
+    },
+    {
+      "@type": "PodcastSeries",
+      "@id": "https://paradigmlife.net/podcast/#series",
+      "name": "The Perpetual Wealth Podcast",
+      "description": "Weekly conversations with Patrick Donohoe on cash flow, financial freedom, and rebuilding the financial system most people never chose.",
+      "url": "https://paradigmlife.net/podcast/",
+      "webFeed": "https://api.riverside.com/hosting/abvBf7Gm.rss",
+      "author": {
+        "@id": "https://paradigmlife.net/podcast/#patrick-donohoe"
+      },
+      "publisher": {
+        "@id": "https://paradigmlife.net/#organization"
+      },
+      "inLanguage": "en-US",
+      "image": "https://paradigmlife.net/podcast/og-share.png"
+    },
+    {
+      "@type": "PodcastEpisode",
+      "@id": "https://paradigmlife.net/podcast/#e486",
+      "name": "E.486 Cash Flow is the Gate",
+      "datePublished": "2026-11-06",
+      "description": "Net worth is the number most people are taught to track. Patrick Donohoe and Wealth Strategist Jaden Zubal make the case that cash flow is the real gate every dollar passes through.",
+      "url": "https://www.youtube.com/watch?v=VHeVcar4oCg",
+      "timeRequired": "PT50M40S",
+      "episodeNumber": 486,
+      "partOfSeries": {
+        "@id": "https://paradigmlife.net/podcast/#series"
+      },
+      "author": {
+        "@id": "https://paradigmlife.net/podcast/#patrick-donohoe"
+      }
+    },
+    {
+      "@type": "PodcastEpisode",
+      "@id": "https://paradigmlife.net/podcast/#e485",
+      "name": "E.485 Write Your Own Rules",
+      "datePublished": "2026-10-30",
+      "description": "Patrick unpacks the pull between certainty and uncertainty, and how writing your own rules changes how you experience both.",
+      "url": "https://www.youtube.com/watch?v=eOf9bsAOU9U",
+      "timeRequired": "PT28M25S",
+      "episodeNumber": 485,
+      "partOfSeries": {
+        "@id": "https://paradigmlife.net/podcast/#series"
+      },
+      "author": {
+        "@id": "https://paradigmlife.net/podcast/#patrick-donohoe"
+      }
+    },
+    {
+      "@type": "PodcastEpisode",
+      "@id": "https://paradigmlife.net/podcast/#e484",
+      "name": "E.484 Are You Investing or Just Gambling?",
+      "datePublished": "2026-10-26",
+      "description": "Patrick and John Stewart dig into control, rate of return fixation, and the difference between a financial picture and a plan that only works if every assumption holds.",
+      "url": "https://podcasts.apple.com/us/podcast/e-484-are-you-investing-or-just-gambling/id265016383?i=1000798223025",
+      "timeRequired": "PT27M24S",
+      "episodeNumber": 484,
+      "partOfSeries": {
+        "@id": "https://paradigmlife.net/podcast/#series"
+      },
+      "author": {
+        "@id": "https://paradigmlife.net/podcast/#patrick-donohoe"
+      }
+    },
+    {
+      "@type": "PodcastEpisode",
+      "@id": "https://paradigmlife.net/podcast/#e483",
+      "name": "E.483 How Healthy Is Your Financial Picture? Taking the WealthScore Together",
+      "datePublished": "2026-10-16",
+      "description": "A walkthrough of WealthScore as a short self-assessment of cash flow, protection, and asset allocation across Certainty, Vitality, Independence, and Freedom.",
+      "url": "https://www.youtube.com/watch?v=Uu2qa6zXfVk",
+      "timeRequired": "PT34M35S",
+      "episodeNumber": 483,
+      "partOfSeries": {
+        "@id": "https://paradigmlife.net/podcast/#series"
+      },
+      "author": {
+        "@id": "https://paradigmlife.net/podcast/#patrick-donohoe"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://paradigmlife.net/podcast/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is The Perpetual Wealth Podcast?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Perpetual Wealth Podcast is a weekly show hosted by Patrick Donohoe, CEO of Paradigm Life. Each episode takes one financial tension apart, traces it to its root, and rebuilds what is underneath using the Perpetual Wealth Strategy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who hosts The Perpetual Wealth Podcast?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Patrick Donohoe hosts the show. He co-founded Paradigm Life in 2007 and developed the Perpetual Wealth Strategy from patterns across thousands of households."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I listen to The Perpetual Wealth Podcast?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can listen on this page via the Spotify player, or on YouTube, Spotify, and Apple Podcasts. The show RSS feed is hosted on Riverside."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What topics does the podcast cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Episodes focus on cash flow, protection, asset allocation, financial freedom, and the four dimensions of Certainty, Vitality, Independence, and Freedom."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is WealthScore?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WealthScore is a short self-assessment that looks at how your financial picture is working across cash flow, protection, and asset allocation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is The Perpetual Wealth Podcast about infinite banking or whole life insurance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The show covers cash flow and wealth strategy topics that often include whole life insurance and related frameworks, but every episode starts from a specific financial tension rather than a product pitch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often do new episodes publish?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "New episodes publish every week. The Spotify show player on this page updates when a new episode goes live."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://paradigmlife.net/podcast/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://paradigmlife.net/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Podcast",
+          "item": "https://paradigmlife.net/podcast/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+```
+
+Schema includes: Organization, Person (Patrick Donohoe), PodcastSeries (webFeed `https://api.riverside.com/hosting/abvBf7Gm.rss`), PodcastEpisode (E.486–E.483), FAQPage, BreadcrumbList. Validate after paste (Rich Results Test).
+
+### On-page SEO checklist for HubSpot modules
+- One H1 (hero). Logical H2/H3s matching mockup.
+- Crawlable episode list with titles, dates, short summaries (do not rely on iframes for indexing).
+- FAQ accordion (7 questions) matching FAQPage schema.
+- Internal links: WealthScore™ portal, Wealth Strategist consult, episode platform URLs, YouTube.
+- Descriptive alt text on logo, host photo, thumbs, covers.
+- Lazy-load Spotify iframe + images; width/height attrs; prefer WebP assets.
+- Sticky header scroll-margin on `#listen #watch #episodes #host #faq`.
+
+---
+
+## Round notes (Nov 9, 2026)
+
+### Header / nav
+- Slim **sticky** top bar, thin bottom border, dark translucent background.
+- Horizontal lockup ~**36px tall** desktop / ~30px mobile (not the previous oversized logo).
+- Right-side on-page nav: Listen, Watch, Episodes, About Patrick, FAQ + small green WealthScore™ pill.
+- Mobile: hamburger toggle. Smooth scroll with `scroll-margin-top` for sticky offset.
+
+### Quote strip (final 7)
+See `QUOTE-SOURCES.md`. Removed write-certain-rules and straight-lines quotes. E.484 uses accumulation/net-worth line (distinct theme).
+
+### Design tokens (PWP dark)
+```css
+--pwp-bg: #000000;
+--pwp-surface: #121212;
+--pwp-text: #FFFFFF;
+--pwp-muted: #9A9A9A;
+--pwp-line: #2C2C2C;
+--pwp-accent: #D4A80E;
+--ws-fill: #58813d;
+--ws-ring: #73a950;
+```
 
 ---
 
@@ -32,43 +296,13 @@
 | Latest verified | Stale archive on WP | **E.486 Cash Flow is the Gate** (Nov 6, 2026) |
 
 YouTube channel: https://www.youtube.com/@ParadigmLife  
-All-episodes playlist: `PL6ZUhtyHuVhFnPyTljFU4SmhOzaZYnqKh` (see YouTube section: **not** safe for auto-latest today)
-
----
-
-## Brand tokens (PWP dark)
-
-```css
---pwp-bg: #000000;
---pwp-bg-2: #0A0A0A;
---pwp-surface: #121212;
---pwp-text: #FFFFFF;
---pwp-muted: #9A9A9A;
---pwp-line: #2C2C2C;
---pwp-accent: #D4A80E;   /* gold highlight only (from E.483 YT art) */
---ws-fill: #58813d;      /* WealthScore CTA only */
---ws-ring: #73a950;      /* WealthScore CTA ring only */
-```
-
-**Wordmark / logo**
-- Do **not** typeset “THE PERPETUAL / WEALTH / PODCAST” in HubSpot.
-- Use the official logo PNG (shield + wordmark) as an image. Source: `/workspace/podcast-lp/assets/pwp-logo.png` (mockup uses cropped `pwp-logo-full.png`).
-- Ghosted background: shield only, very low opacity (`pwp-shield-ghost.png`). No episode cover in the hero.
-
-**Font ID (for reference only; logo image is the source of truth)**  
-Likely **Gotham** (Paradigm Life brand) or **Montserrat** as a free stand-in. Thin tracked lines ≈ Light/Book (~300); `WEALTH` ≈ Bold (~700), **not** Black/900. Confidence ~65%. Prefer the logo asset so weight and tracking stay exact.
-
-**Platform buttons:** white outline on black.  
-**WealthScore™ CTA only:** fill `#58813d`, ring `#73a950`.
-
-**Spacing:** generous page padding (`clamp(28px, 5vw, 48px)` horizontal; large section vertical padding). Keep CTA inner padding roomy, including mobile.
+Playlist: `PL6ZUhtyHuVhFnPyTljFU4SmhOzaZYnqKh`
 
 ---
 
 ## Embeds
 
-### Spotify (keep exactly as mockup; auto-updates)
-
+### Spotify (auto-updates)
 ```html
 <iframe
   title="The Perpetual Wealth Podcast on Spotify"
@@ -78,82 +312,32 @@ Likely **Gotham** (Paradigm Life brand) or **Montserrat** as a free stand-in. Th
   loading="lazy"></iframe>
 ```
 
-### YouTube section (under “What you will hear”)
+### WealthScore™ CTA
+- URL: `https://portal.paradigmlife.net/wealthscore?utm_source=podcast-page&utm_medium=referral&utm_campaign=podcast-lp`
+- Label: short self-assessment (never "free")
+- Strategist: `https://learn.paradigmlife.net/or-lib-consultation-request?utm_source=podcast-page&utm_medium=referral&utm_campaign=podcast-lp`
 
-**Mockup seeding (Nov 9, 2026):**
-- Featured embed: `https://www.youtube.com/embed/VHeVcar4oCg` (E.486)
-- Cards: `VHeVcar4oCg` (E.486), `eOf9bsAOU9U` (E.485), `Uu2qa6zXfVk` (E.483)
-
-**Playlist check:** `PL6ZUhtyHuVhFnPyTljFU4SmhOzaZYnqKh` RSS currently returns older videos first and **does not include** E.485/E.486. A `youtube.com/embed/videoseries?list=…` embed would **not** auto-show the latest today.
-
-**Simplest HubSpot auto-update options (pick one):**
-1. **Preferred:** Create a dedicated YouTube playlist “PWP Latest” kept **newest-first**, add each full episode when published, embed once with  
-   `https://www.youtube.com/embed/videoseries?list=PLAYLIST_ID`  
-   HubSpot HTML module; no weekly page edit.
-2. **Manual light:** Keep featured iframe + 3 cards; update video IDs weekly from the channel RSS  
-   `https://www.youtube.com/feeds/videos.xml?channel_id=UCKmGmR4v96Ia6N494cM1Kgw` (filter out Shorts).
-3. HubSpot cannot auto-refresh static video-ID cards without a custom feed module / serverless proxy.
+### Wording rules
+- No em dashes. No guarantees. No tax advice.
+- "livestream" not "webinar".
+- Dimensions: Certainty / Vitality / Independence / Freedom.
+- Pillars: Cash Flow / Protection / Asset Allocation.
+- WealthScore™ = short self-assessment.
 
 ---
 
-## Page modules
+## Module map (HubSpot)
+1. Sticky header (logo + nav + WealthScore pill)
+2. Hero (copy left, ghosted shield right)
+3. Spotify player full width
+4. Quote strip (7 slides)
+5. Platform buttons
+6. What you will hear (3 cards)
+7. YouTube thumbnail cards (3)
+8. Host
+9. Recent episodes (crawlable HTML + summaries)
+10. FAQ (7)
+11. WealthScore / Strategist CTA + email form placeholder
+12. Footer
 
-1. Header: full PWP logo image + draft not needed in HubSpot  
-2. Hero: eyebrow, short H1, promise, CTA to player; ghosted shield background only  
-3. Spotify player (HTML)  
-4. Watch or listen platform pills (YouTube, Spotify, Apple, All episodes)  
-5. What you will hear (3 cards)  
-6. Watch on YouTube (featured + 3 cards or playlist embed once curated)  
-7. Host (photo placeholder until Rachel supplies)  
-8. Recent episodes (Riverside cover art; episode number is **in the art**, do not overlay)  
-9. WealthScore™ CTA (green) + HubSpot email form for new-episode list
-
----
-
-## “What you will hear” copy sources (for Trinity)
-
-| Line | Source |
-|---|---|
-| Section lede: “This is not a tips show. It is a weekly look at how money actually works in a household, and what changes when you treat it as one connected system.” | **Adapted by Grok Bot** from June Google Doc `pws-podcast-lp__landing_page` (“This isn't a show about tips. It's a show about how money actually works in a household…”) |
-| Card title “One theme, explored deeply” | **June Google Doc** (exact heading under “What You'll Hear”) |
-| Card body “Every episode anchors on a single idea and stays there long enough to change how you think about it.” | **Adapted by Grok Bot** from June Doc (“Every episode anchors on a single idea and stays there long enough to actually change how you think about it. We don't tour five topics…”) |
-| Card title “Framework, not opinion” | **June Google Doc** (exact heading) |
-| Card body “Conversations sit inside the Perpetual Wealth Strategy: cash flow, protection, and asset allocation working together.” | **Written by Grok Bot** for the mockup (June Doc talks 4-3-2-1 / pillars at a higher level; this names the three pillars directly) |
-| Card title “Patterns from real households” | **Adapted by Grok Bot** from June Doc heading “Real patterns from real households” |
-| Card body “Drawn from two decades of work with thousands of families, including what quietly fails and what people rarely ask until it is late.” | **Adapted by Grok Bot** from June Doc (“We've sat across the table from thousands of families… what actually works, what quietly fails, and what most people never think to ask…”) |
-
-Hero promise (“Most financial stress is not a bad investment…”) is adapted from the **Riverside / Apple / Spotify show description** and the current WP podcast page lede (same root copy). Host bio is adapted from the June Doc host section + WP about block, shortened.
-
----
-
-## Meta (draft)
-
-- **Title:** The Perpetual Wealth Podcast \| Patrick Donohoe  
-- **Description:** Listen to the latest episode of The Perpetual Wealth Podcast. Watch on YouTube or listen on Spotify and Apple Podcasts.  
-- **OG image:** PWP logo square
-
-## Wording rules
-
-- “livestream,” never “webinar”  
-- No em dashes  
-- No guarantees or tax advice  
-- **WealthScore™** = short self-assessment (not “free”)  
-- No Avalaunch  
-- Keep PWP dark brand separate from FO360 and cream/green PL marketing pages (except WealthScore CTA green)
-
-## Launch checklist
-
-- [ ] Rachel approves mockup  
-- [ ] Patrick photo supplied  
-- [ ] Confirm slug / WP redirect  
-- [ ] Spotify embed live  
-- [ ] YouTube auto-update path chosen (new playlist vs manual)  
-- [ ] Platform buttons = **new** Apple/Spotify IDs  
-- [ ] WealthScore™ UTM link  
-- [ ] HubSpot email form wired  
-- [ ] Trinity review of “What you will hear”  
-- [ ] Rachel publish OK
-
-## Quote strip revision (Nov 9, 2026 — Rachel keep + diversify)
-
-Kept: (1) cash-flow-is-the-gate long quote, (2) same gate theme covered by #1, (3) reserves / life is not a straight line, (4) write-certain-rules (short form). Dropped redundant E.485/E.486 lines. Added diverse quotes from E.485 (certainty/uncertainty), E.484 (straight lines; financial picture), E.482 (ecosystem vs one sliver), E.480 (four dimensions). Full provenance in `QUOTE-SOURCES.md`. Host photo remains Rachel's original mic-behind headshot.
+Trinity copy review Doc is separate (Rachel Drive). Do not publish until Trinity + Whitney sign off.
