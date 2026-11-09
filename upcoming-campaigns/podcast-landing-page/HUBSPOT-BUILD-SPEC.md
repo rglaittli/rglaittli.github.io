@@ -385,7 +385,7 @@ Listen on Apple Podcasts (https://podcasts.apple.com/us/podcast/the-perpetual-we
 New episodes publish weekly. Follow the show on Apple Podcasts (https://podcasts.apple.com/us/podcast/the-perpetual-wealth-podcast/id265016383), Spotify (https://open.spotify.com/show/08iIRqJgT7X9UnbrHGF9A3), or the YouTube playlist (https://www.youtube.com/playlist?list=PL6ZUhtyHuVhFnPyTljFU4SmhOzaZYnqKh) so new episodes show up automatically.
 
 **8. What is the Perpetual Wealth Strategy, and how does it relate to the podcast?**  
-The Perpetual Wealth Strategy is Paradigm Life's approach to building, protecting, and using wealth as one connected system across cash flow, protection, and asset allocation. The podcast is where Patrick works through the tensions that show up inside that system. For a deeper overview, read The Perpetual Wealth Strategy (https://learn.paradigmlife.net/perpetual-wealth-strategy).
+The Perpetual Wealth Strategy is Paradigm Life's approach to building, protecting, and using wealth as one connected system across cash flow, protection, and asset allocation. The podcast is where Patrick works through the tensions that show up inside that system. For a deeper overview, read The Perpetual Wealth Strategy (https://paradigmlife.net/perpetual-wealth-strategy-grow-wealth/).
 
 
 Also keep FAQPage JSON-LD in page head in sync with these eight Q&As.
@@ -393,4 +393,7 @@ Also keep FAQPage JSON-LD in page head in sync with these eight Q&As.
 ### FAQ revision (same day)
 - Q2: Patrick only; joined by wealth strategists/colleagues/experts (no other names).
 - Q5: plain sentences (no arrows); added E.481 as 4321-system starting point (no episode titled "4321" found; E.481 Apple description covers the framework).
-- Strategy link kept: https://learn.paradigmlife.net/perpetual-wealth-strategy
+- Strategy link (FAQ Q8): https://paradigmlife.net/perpetual-wealth-strategy-grow-wealth/
+
+### Strategy URL swap (Nov 9, 2026)
+- FAQ Q8 and related links now point to https://paradigmlife.net/perpetual-wealth-strategy-grow-wealth/ (Rachel). Verified HTTP 200.
