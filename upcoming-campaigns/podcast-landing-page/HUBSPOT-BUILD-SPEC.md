@@ -336,7 +336,7 @@ Playlist: `PL6ZUhtyHuVhFnPyTljFU4SmhOzaZYnqKh`
 7. YouTube thumbnail cards (3)
 8. Host
 9. Recent episodes (crawlable HTML + summaries)
-10. FAQ (7)
+10. FAQ (8)
 11. WealthScore / Strategist CTA + email form placeholder
 12. Footer
 
@@ -360,3 +360,32 @@ Trinity copy review Doc is separate (Rachel Drive). Do not publish until Trinity
 - [ ] Replace old Libsyn / old Apple / old Spotify links with Riverside + current IDs.
 - [ ] **Listen-through of quote strip quotes 1–7 against episode audio** before publish (sources in QUOTE-SOURCES.md).
 - [ ] Whitney compliance + Trinity copy sign-off.
+
+## FAQ copy (Rachel Nov 9, 2026 — 8 questions)
+
+**1. What is The Perpetual Wealth Podcast about?**  
+Each episode takes a familiar financial tension, looks at what is driving it, and explores how to make better decisions about it. The show is not a tips list. It is a weekly look at the system underneath money stress, hosted by Patrick Donohoe of Paradigm Life.
+
+**2. Who hosts The Perpetual Wealth Podcast?**  
+Patrick Donohoe, co-founder and CEO of Paradigm Life, is the primary host. The live podcast page also features other Paradigm Life hosts on select episodes, including Gary Pinkerton and Nick Welch.
+
+**3. Who is The Perpetual Wealth Podcast for?**  
+It is for people who want to understand how everyday decisions about cash flow, housing, investing, and retirement fit together. You do not need to be wealthy to listen. You need to be serious about seeing the full picture.
+
+**4. What topics does The Perpetual Wealth Podcast cover?**  
+Episodes cover cash flow, home equity and liquidity, family and money, investing versus gambling, and how investors read economic news. Start with E.477 House Rich, Cash Poor (https://podcasts.apple.com/us/podcast/e-477-house-rich-cash-poor/id265016383?i=1000786355797), E.478 The Family Fight (https://podcasts.apple.com/us/podcast/e-478-the-family-fight/id265016383?i=1000786355633), or E.475 The Investor's Read: Jobs, Market Sentiment + the Fear Paradox (https://podcasts.apple.com/us/podcast/e-475-the-investors-read-jobs-market-sentiment-the/id265016383?i=1000786355579).
+
+**5. Which episode should I start with?**  
+If most of your wealth is tied up in your home, start with E.477 House Rich, Cash Poor (https://podcasts.apple.com/us/podcast/e-477-house-rich-cash-poor/id265016383?i=1000786355797). If you want a clearer read on where you stand, listen to E.483 How Healthy Is Your Financial Picture? (https://podcasts.apple.com/us/podcast/e-483-how-healthy-is-your-financial-picture-taking/id265016383?i=1000796701914). If cash flow is the open question, start with E.486 Cash Flow is the Gate (https://podcasts.apple.com/us/podcast/e-486-cash-flow-is-the-gate/id265016383?i=1000800322683).
+
+**6. Where can I listen to or watch The Perpetual Wealth Podcast?**  
+Listen on Apple Podcasts (https://podcasts.apple.com/us/podcast/the-perpetual-wealth-podcast/id265016383) or Spotify (https://open.spotify.com/show/08iIRqJgT7X9UnbrHGF9A3), or watch the YouTube All Episodes playlist (https://www.youtube.com/playlist?list=PL6ZUhtyHuVhFnPyTljFU4SmhOzaZYnqKh). You can also use the Spotify player on this page.
+
+**7. How often are new episodes released?**  
+New episodes publish weekly. Follow the show on Apple Podcasts (https://podcasts.apple.com/us/podcast/the-perpetual-wealth-podcast/id265016383), Spotify (https://open.spotify.com/show/08iIRqJgT7X9UnbrHGF9A3), or the YouTube playlist (https://www.youtube.com/playlist?list=PL6ZUhtyHuVhFnPyTljFU4SmhOzaZYnqKh) so new episodes show up automatically.
+
+**8. What is the Perpetual Wealth Strategy, and how does it relate to the podcast?**  
+The Perpetual Wealth Strategy is Paradigm Life's approach to building, protecting, and using wealth as one connected system across cash flow, protection, and asset allocation. The podcast is where Patrick works through the tensions that show up inside that system. For a deeper overview, read The Perpetual Wealth Strategy (https://learn.paradigmlife.net/perpetual-wealth-strategy).
+
+
+Also keep FAQPage JSON-LD in page head in sync with these eight Q&As.
