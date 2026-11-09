@@ -194,7 +194,7 @@ Current live WP page title/meta are weak: title `Podcast - Paradigm Life`; descr
           "name": "What topics does the podcast cover?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Episodes focus on cash flow, protection, asset allocation, financial freedom, and the four dimensions of Certainty, Vitality, Independence, and Freedom."
+            "text": "Episodes focus on cash flow, protection, asset allocation, and the four dimensions of Certainty, Vitality, Independence, and Freedom."
           }
         },
         {
@@ -341,3 +341,22 @@ Playlist: `PL6ZUhtyHuVhFnPyTljFU4SmhOzaZYnqKh`
 12. Footer
 
 Trinity copy review Doc is separate (Rachel Drive). Do not publish until Trinity + Whitney sign off.
+
+## Trinity copy fixes (Nov 9, 2026)
+- FAQ A4: remove duplicate "financial freedom" before the Freedom dimension. Use: "Cash flow, protection, asset allocation, and the four dimensions of Certainty, Vitality, Independence, and Freedom."
+- Replace "nearly two decades" with **"nearly nearly two decades"** (co-founded 2007) everywhere on page (What you will hear card, host/FAQ if present).
+
+## Header / hero (Rachel visual pass)
+- Sticky header uses **shield mark only** (`pwp-shield-mark-white.png`), ~38px tall. Not the full horizontal lockup.
+- Hero places the **full horizontal white lockup** above the Listen button.
+- Ghosted shield is **massive** (absolute, overflow cropped, opacity ~0.07), including mobile.
+- YouTube section: **do not change** without Rachel asking. Landscape 16:9 custom-thumb cards, H2 "Watch on YouTube", **no** "custom thumbnails / auto frames" lede.
+
+## Production checklist (HubSpot publish)
+- [ ] Remove `noindex,nofollow` robots meta (mockup keeps it; production must be indexable).
+- [ ] Strip **Draft for internal review** pill and internal draft footer/banner.
+- [ ] Set canonical `https://paradigmlife.net/podcast/` (or final chosen host) + OG image absolute URL.
+- [ ] Paste JSON-LD schema from this spec; validate in Rich Results Test.
+- [ ] Replace old Libsyn / old Apple / old Spotify links with Riverside + current IDs.
+- [ ] **Listen-through of quote strip quotes 1–7 against episode audio** before publish (sources in QUOTE-SOURCES.md).
+- [ ] Whitney compliance + Trinity copy sign-off.

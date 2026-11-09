@@ -163,7 +163,7 @@
           "name": "What topics does the podcast cover?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Episodes focus on cash flow, protection, asset allocation, financial freedom, and the four dimensions of Certainty, Vitality, Independence, and Freedom."
+            "text": "Episodes focus on cash flow, protection, asset allocation, and the four dimensions of Certainty, Vitality, Independence, and Freedom."
           }
         },
         {
@@ -264,13 +264,15 @@ img{max-width:100%;display:block}
 }
 .hero-copy{position:relative;z-index:2;max-width:560px}
 .hero-shield{
-  position:relative;
-  z-index:1;
-  justify-self:end;
-  width:min(520px, 100%);
-  aspect-ratio:1;
+  position:absolute;
+  z-index:0;
+  right:-18%;
+  top:50%;
+  transform:translateY(-50%);
+  width:min(980px, 92vw);
+  height:min(980px, 92vw);
   background:url(pwp-shield-ghost.png) center / contain no-repeat;
-  opacity:.09;
+  opacity:.07;
   pointer-events:none;
 }
 .eyebrow{font:600 12px/1 Montserrat,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin:0 0 22px}
@@ -391,6 +393,8 @@ footer b{color:#fff}
 header.site{position:sticky;top:0;z-index:50;padding:0;border-bottom:1px solid var(--line);background:rgba(0,0,0,.92);backdrop-filter:saturate(140%) blur(10px);-webkit-backdrop-filter:saturate(140%) blur(10px)}
 header.site .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:56px;padding-top:10px;padding-bottom:10px;flex-wrap:nowrap}
 header.site .logo{width:auto;height:36px;max-width:min(220px,42vw)}
+header.site .logo-shield{height:38px;width:auto;max-width:none}
+@media (max-width:900px){header.site .logo-shield{height:32px}}
 .draft-pill{font:600 10px Montserrat,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#7a5a00;background:#fff7e0;border-radius:999px;padding:5px 10px;flex:none}
 .site-nav{display:flex;align-items:center;gap:4px 18px;margin-left:auto;flex-wrap:nowrap}
 .site-nav a{font:600 12px/1 Montserrat,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-decoration:none;white-space:nowrap;padding:8px 0;border-bottom:2px solid transparent}
@@ -401,6 +405,7 @@ header.site .logo{width:auto;height:36px;max-width:min(220px,42vw)}
 .nav-toggle svg{width:18px;height:18px}
 @media (max-width:900px){
   header.site .logo{height:30px}
+  header.site .logo-shield{height:32px}
   .nav-toggle{display:inline-flex}
   .site-nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:#000;border-bottom:1px solid var(--line);padding:8px var(--pad-x) 14px;max-height:70vh;overflow:auto}
   header.site.is-open .site-nav{display:flex}
@@ -414,6 +419,11 @@ html{scroll-behavior:smooth}
 
 
 #listen,#watch,#episodes,#host,#faq,#about,#platforms,#next-step{scroll-margin-top:72px}
+.hero-logo{display:block;width:min(420px,92%);height:auto;margin:0 0 28px;position:relative;z-index:2}
+@media (max-width:860px){
+  .hero-shield{right:-35%;top:58%;width:min(720px,140vw);height:min(720px,140vw);opacity:.065}
+  .hero-logo{width:min(320px,88%);margin:0 0 22px}
+}
 </style>
 </head>
 <body>
@@ -422,7 +432,7 @@ html{scroll-behavior:smooth}
 <header class="site" data-site-header>
   <div class="wrap">
     <a href="#listen" class="logo-link" aria-label="The Perpetual Wealth Podcast home">
-      <img class="logo" src="pwp-lockup-horizontal-white.png" width="840" height="160" alt="The Perpetual Wealth Podcast logo, silver shield and wordmark on black">
+      <img class="logo logo-shield" src="pwp-shield-mark-white.png" width="197" height="205" alt="Perpetual Wealth Podcast shield mark">
     </a>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -441,10 +451,11 @@ html{scroll-behavior:smooth}
 
 <section class="hero">
   <div class="wrap">
-    <div class="hero-copy">
+        <div class="hero-copy">
       <p class="eyebrow">New episodes every week</p>
       <h1>One financial tension. Traced to its root. Rebuilt.</h1>
       <p class="promise">Most financial stress is not a bad investment or a bad plan. It is a fractured system you never chose. Each week on The Perpetual Wealth Podcast, Patrick Donohoe takes one tension apart and rebuilds what is underneath.</p>
+      <img class="hero-logo" src="pwp-lockup-horizontal-white.png" width="520" height="205" alt="The Perpetual Wealth Podcast">
       <a class="btn-outline" href="#listen">Listen to the latest episode</a>
     </div>
     <div class="hero-shield" aria-hidden="true"></div>
@@ -531,7 +542,7 @@ html{scroll-behavior:smooth}
       </div>
       <div class="card">
         <h3>Patterns from real households</h3>
-        <p>Drawn from two decades of work with thousands of families, including what quietly fails and what people rarely ask until it is late.</p>
+        <p>Drawn from nearly two decades of work with thousands of families, including what quietly fails and what people rarely ask until it is late.</p>
       </div>
     </div>
   </div>
@@ -539,19 +550,18 @@ html{scroll-behavior:smooth}
 
 <section class="block" id="watch">
   <div class="wrap">
-    <h2>Watch The Perpetual Wealth Podcast on YouTube</h2>
-    <p class="lede">Custom episode thumbnails (not YouTube auto frames), linked to the full videos.</p>
+    <h2>Watch on YouTube</h2>
     <div class="yt-cards">
       <a class="ytc" href="https://www.youtube.com/watch?v=VHeVcar4oCg" target="_blank" rel="noopener">
-        <img src="yt-thumb-e486.webp" width="1280" height="720" loading="lazy" alt="E.486 Cash Flow Is the Gate custom YouTube thumbnail, blue episode art with EP. 486">
+        <img src="yt-thumb-e486.jpg" width="1280" height="720" loading="lazy" alt="E.486 Cash Flow Is the Gate">
         <div class="cap"><b>Cash Flow Is the Gate</b><span>E.486 · Nov 6, 2026</span></div>
       </a>
       <a class="ytc" href="https://www.youtube.com/watch?v=eOf9bsAOU9U" target="_blank" rel="noopener">
-        <img src="yt-thumb-e485.webp" width="1280" height="720" loading="lazy" alt="E.485 Write Your Own Rules custom YouTube thumbnail">
+        <img src="yt-thumb-e485.jpg" width="1280" height="720" loading="lazy" alt="E.485 Write Your Own Rules">
         <div class="cap"><b>Write Your Own Rules</b><span>E.485 · Oct 30, 2026</span></div>
       </a>
       <a class="ytc" href="https://www.youtube.com/watch?v=Uu2qa6zXfVk" target="_blank" rel="noopener">
-        <img src="yt-thumb-e483.webp" width="1280" height="720" loading="lazy" alt="E.483 How Healthy Is Your Financial Picture WealthScore episode thumbnail">
+        <img src="yt-thumb-e483.jpg" width="1280" height="720" loading="lazy" alt="E.483 How Healthy Is Your Financial Picture">
         <div class="cap"><b>How Healthy Is Your Financial Picture?</b><span>E.483 · Oct 16, 2026</span></div>
       </a>
     </div>
@@ -652,7 +662,7 @@ html{scroll-behavior:smooth}
     </details>
     <details>
       <summary>What topics does the podcast cover?</summary>
-      <p>Cash flow, protection, asset allocation, financial freedom, and the four dimensions of Certainty, Vitality, Independence, and Freedom. Recent themes include writing your own rules, investing versus gambling, and measuring your financial picture.</p>
+      <p>Cash flow, protection, asset allocation, and the four dimensions of Certainty, Vitality, Independence, and Freedom. Recent themes include writing your own rules, investing versus gambling, and measuring your financial picture.</p>
     </details>
     <details>
       <summary>What is WealthScore™?</summary>
