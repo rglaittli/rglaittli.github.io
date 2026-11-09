@@ -328,7 +328,7 @@ section.block .lede{color:var(--muted);max-width:40em;margin:0 0 32px}
 .yt-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .ytc{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:border-color .15s,transform .15s}
 .ytc:hover{border-color:var(--accent);transform:translateY(-2px)}
-.ytc img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#111}
+.ytc img{width:100%;aspect-ratio:16/9;height:auto;object-fit:cover;background:#111;display:block}
 .ytc .cap{padding:16px 16px 18px}
 .ytc .cap b{display:block;font:700 15px/1.35 Montserrat,sans-serif;margin-bottom:4px}
 .ytc .cap span{font-size:12.5px;color:var(--muted)}
@@ -343,7 +343,7 @@ section.block .lede{color:var(--muted);max-width:40em;margin:0 0 32px}
 .ep{display:grid;grid-template-columns:120px 1fr;gap:18px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;color:inherit;transition:border-color .15s,transform .15s}
 .ep:hover{border-color:var(--accent);transform:translateY(-2px)}
 .ep .thumb{width:120px;height:120px;border-radius:10px;overflow:hidden;background:#111}
-.ep .thumb img{width:100%;height:100%;object-fit:cover}
+.ep .thumb .ep .thumb img,
 .ep .meta{display:flex;flex-direction:column;justify-content:center;gap:6px;min-width:0}
 .ep .meta b{font:700 16px/1.3 Montserrat,sans-serif}
 .ep .meta span{font-size:13px;color:var(--muted)}
@@ -370,7 +370,7 @@ footer b{color:#fff}
 @media(max-width:900px){
   .hero .wrap,.grid3,.yt-cards,.eps{grid-template-columns:1fr}
   .hero{padding:56px 0 48px}
-  .hero-shield{justify-self:center;width:min(320px,70vw);opacity:.07;order:-1;margin-bottom:-40px}
+  /* hero-shield: keep absolute massive treatment from base/860 rules */
   .hero .wrap{min-height:0}
   .host{grid-template-columns:1fr}
   .host-photo{width:140px;height:140px}
@@ -423,6 +423,15 @@ html{scroll-behavior:smooth}
 @media (max-width:860px){
   .hero-shield{right:-35%;top:58%;width:min(720px,140vw);height:min(720px,140vw);opacity:.065}
   .hero-logo{width:min(320px,88%);margin:0 0 22px}
+}
+.ep .thumb img{width:100%;height:100%;object-fit:cover}
+
+/* YT landscape lock — do not change without Rachel */
+.yt-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+.ytc{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.ytc img{width:100% !important;height:auto !important;aspect-ratio:16/9 !important;object-fit:cover;background:#111;display:block}
+@media (max-width:900px){
+  .yt-cards{grid-template-columns:1fr;max-width:560px;margin:0 auto}
 }
 </style>
 </head>
