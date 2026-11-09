@@ -13,6 +13,6 @@ All quotes are Patrick Donohoe, lightly trimmed of filler only (~, like/you know
 | 7 | You can write certain rules around how you experience them as opposed to the rules being written for you. | E.485 | ~4:23 | same (Right/Center; wording aligned to Right track clean read) |
 | 8 | But you can write your rules. | E.485 | ~14:20 | same Center: "And the drive is within all of us. But you can write your rules." |
 
-Host photo: Rachel's pick (mic behind him)  
-`/cursor/stores/user/grok-bot/agents/6e872b1b-ec06-426b-8d90-92e8d9bf57bf/assets/5d0e403afcca6d2f453ca3bd82c6b992e2f36bfd027f066535cf47ba3bb41431.jpg`  
+Host photo: retouched mic-behind headshot  
+`/workspace/pat-photos/pat-headshot-v5.jpg`  
 → mockup `patrick-host.jpg`
