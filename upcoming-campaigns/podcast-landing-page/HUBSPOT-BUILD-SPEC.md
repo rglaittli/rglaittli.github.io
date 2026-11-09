@@ -7,6 +7,16 @@
 
 ---
 
+## Round 3 mockup notes (Nov 9, 2026)
+
+- Header uses horizontal lockup: `/workspace/pwp-banner/pwp_horizontal_white_transparent.png` (copied to mockup as `pwp-lockup-horizontal-white.png`). White on transparent for the black page.
+- Hero is taller, two-column: copy left, Spotify player right (same Spotify show embed).
+- YouTube section: **no big iframe**. Three custom-thumbnail cards only.
+- E.486 custom YouTube thumbnail (blue, EP. 486): `/workspace/thumbnails/ep486/E486-cash-flow-is-the-gate.png` (1280×720). Live YouTube `VHeVcar4oCg` maxres currently shows an **auto video frame** of Patrick (not this custom art). Rachel can re-upload the custom thumb in YouTube Studio; mockup already uses our file on the card.
+- Ghosted shield background retained; no episode cover in the hero.
+
+---
+
 ## Critical: use the NEW feed, not the WordPress page
 
 | | Old (do not use) | New (use this) |
