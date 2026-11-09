@@ -40,31 +40,31 @@ header.site .wrap{display:flex;justify-content:space-between;align-items:center;
 header.site .logo{width:min(420px,78vw);height:auto}
 .draft-pill{font:600 11px Montserrat,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#7a5a00;background:#fff7e0;border-radius:999px;padding:7px 14px}
 
-/* tall two-column hero: copy + player */
+/* tall hero: copy left, large ghosted shield right */
 .hero{
   position:relative;
   padding: clamp(72px, 12vw, 140px) 0 clamp(56px, 8vw, 96px);
   overflow:hidden;
   border-bottom:1px solid var(--line);
 }
-.hero::before{
-  content:"";
-  position:absolute;
-  left:50%;
-  top:42%;
-  transform:translate(-30%, -50%);
-  width:min(720px, 90vw);
-  height:min(720px, 90vw);
-  background:url(pwp-shield-ghost.png) center / contain no-repeat;
-  opacity:.06;
-  pointer-events:none;
-}
 .hero .wrap{
   position:relative;z-index:1;
   display:grid;
-  grid-template-columns: 1.05fr .95fr;
-  gap: clamp(28px, 4vw, 48px);
+  grid-template-columns: 1.15fr .85fr;
+  gap: clamp(24px, 4vw, 40px);
   align-items:center;
+  min-height: clamp(280px, 38vw, 420px);
+}
+.hero-copy{position:relative;z-index:2;max-width:560px}
+.hero-shield{
+  position:relative;
+  z-index:1;
+  justify-self:end;
+  width:min(520px, 100%);
+  aspect-ratio:1;
+  background:url(pwp-shield-ghost.png) center / contain no-repeat;
+  opacity:.09;
+  pointer-events:none;
 }
 .eyebrow{font:600 12px/1 Montserrat,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin:0 0 22px}
 .hero h1{margin:0 0 22px;font-size:clamp(34px,4.6vw,52px);line-height:1.12;font-weight:700;letter-spacing:-.015em}
@@ -72,14 +72,16 @@ header.site .logo{width:min(420px,78vw);height:auto}
 .btn-outline{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border:1px solid #fff;border-radius:999px;text-decoration:none;font:700 14px Montserrat,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:transparent;transition:background .15s,color .15s}
 .btn-outline:hover{background:#fff;color:#000}
 
-.hero-player{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;position:relative;min-width:0}
-.hero-player::before{content:"";position:absolute;left:18px;right:18px;top:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
-.hero-player .player-label{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:12px}
-.hero-player .player-label b{font:700 12px/1 Montserrat,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-.hero-player .player-label span{font-size:12px;color:var(--muted)}
+/* full-width Spotify under hero */
+.player-sec{padding:40px 0 56px}
+.player-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:clamp(20px,3vw,28px);position:relative}
+.player-card::before{content:"";position:absolute;left:24px;right:24px;top:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+.player-label{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.player-label b{font:700 13px/1 Montserrat,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.player-label span{font-size:13px;color:var(--muted)}
 .spotify-wrap{border-radius:12px;overflow:hidden;background:#000}
 .spotify-wrap iframe{display:block;width:100%;border:0;min-height:352px}
-.player-note{margin:12px 0 0;font-size:12.5px;color:var(--muted)}
+.player-note{margin:14px 0 0;font-size:13px;color:var(--muted)}
 
 .platforms{padding:56px 0 64px}
 .platforms h2{font:700 13px/1 Montserrat,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 20px;text-align:center}
@@ -141,6 +143,8 @@ footer b{color:#fff}
 @media(max-width:900px){
   .hero .wrap,.grid3,.yt-cards,.eps{grid-template-columns:1fr}
   .hero{padding:56px 0 48px}
+  .hero-shield{justify-self:center;width:min(320px,70vw);opacity:.07;order:-1;margin-bottom:-40px}
+  .hero .wrap{min-height:0}
   .host{grid-template-columns:1fr}
   .host-ph{width:140px;height:140px}
   .ep{grid-template-columns:96px 1fr;gap:14px}
@@ -160,18 +164,24 @@ footer b{color:#fff}
   </div>
 </header>
 
-<section class="hero" id="listen">
+<section class="hero">
   <div class="wrap">
-    <div>
+    <div class="hero-copy">
       <p class="eyebrow">New episodes every week</p>
       <h1>One financial tension. Traced to its root. Rebuilt.</h1>
       <p class="promise">Most financial stress is not a bad investment or a bad plan. It is a fractured system you never chose. Each week Patrick Donohoe takes one tension apart and rebuilds what is underneath.</p>
-      <a class="btn-outline" href="#platforms">Watch or listen</a>
+      <a class="btn-outline" href="#listen">Listen to the latest episode</a>
     </div>
-    <div class="hero-player">
+    <div class="hero-shield" aria-hidden="true"></div>
+  </div>
+</section>
+
+<section class="player-sec" id="listen">
+  <div class="wrap">
+    <div class="player-card">
       <div class="player-label">
         <b>Listen here</b>
-        <span>Spotify · latest episode</span>
+        <span>Spotify show player · always shows the latest episode</span>
       </div>
       <div class="spotify-wrap">
         <iframe
