@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
 <title>The Perpetual Wealth Podcast (Landing Page Mockup) | Paradigm Life</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#000;
@@ -17,127 +17,133 @@
   --muted:#9a9a9a;
   --ghost:#2a2a2a;
   --line:#2c2c2c;
-  --accent:#D4A80E; /* gold from E.483 YouTube thumbnail art */
-  --accent-soft:rgba(212,168,14,.18);
+  --accent:#D4A80E;
+  --ws-fill:#58813d;
+  --ws-ring:#73a950;
   --r:14px;
   --max:1080px;
+  --pad-x: clamp(28px, 5vw, 48px);
+  --pad-y: clamp(48px, 8vw, 88px);
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--text)}
-body{font:400 17px/1.6 Montserrat,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+body{font:400 17px/1.65 Montserrat,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:var(--text)}
 img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad-x)}
 
-/* internal review bar */
 .internal{background:#fff7e0;color:#7a5a00;font:600 13px/1.4 Arial,sans-serif;border-bottom:1px solid #f0dca0}
-.internal .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between;align-items:center;padding-top:10px;padding-bottom:10px}
+.internal .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between;align-items:center;padding-top:12px;padding-bottom:12px}
 .internal a{color:#7a5a00}
 
-/* wordmark lockup matching logo type */
-.brandlock{display:flex;align-items:center;gap:18px}
-.brandlock img{width:64px;height:auto}
-.wordmark{line-height:1;text-align:left}
-.wordmark .l1{display:block;font-weight:300;font-size:11px;letter-spacing:.42em;text-transform:uppercase;margin-left:.2em}
-.wordmark .l2{display:block;font-weight:900;font-size:28px;letter-spacing:.04em;text-transform:uppercase;margin:2px 0}
-.wordmark .l3{display:block;font-weight:300;font-size:11px;letter-spacing:.58em;text-transform:uppercase;margin-left:.15em}
+header.site{padding:36px 0 20px;border-bottom:1px solid var(--line);position:relative;z-index:2}
+header.site .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+header.site .logo{width:min(220px,52vw);height:auto}
+.draft-pill{font:600 11px Montserrat,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#7a5a00;background:#fff7e0;border-radius:999px;padding:7px 14px}
 
-header.site{padding:28px 0 8px;border-bottom:1px solid var(--line)}
-header.site .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-.draft-pill{font:600 11px Montserrat,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#7a5a00;background:#fff7e0;border-radius:999px;padding:6px 12px}
+/* ghosted shield behind hero only */
+.hero{position:relative;padding:var(--pad-y) 0 36px;overflow:hidden}
+.hero::before{
+  content:"";
+  position:absolute;
+  right:clamp(-40px, -2vw, 40px);
+  top:50%;
+  transform:translateY(-52%);
+  width:min(560px, 78vw);
+  height:min(560px, 78vw);
+  background:url(pwp-shield-ghost.png) center / contain no-repeat;
+  opacity:.07;
+  pointer-events:none;
+}
+.hero .wrap{position:relative;z-index:1;max-width:720px}
+.eyebrow{font:600 12px/1 Montserrat,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin:0 0 20px}
+.hero h1{margin:0 0 20px;font-size:clamp(34px,5.2vw,52px);line-height:1.12;font-weight:700;letter-spacing:-.015em}
+.promise{font-size:19px;line-height:1.55;color:var(--muted);margin:0 0 32px}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border:1px solid #fff;border-radius:999px;text-decoration:none;font:700 14px Montserrat,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:transparent;transition:background .15s,color .15s,border-color .15s}
+.btn-outline:hover{background:#fff;color:#000}
 
-/* hero */
-.hero{position:relative;padding:64px 0 40px;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 20%,rgba(212,168,14,.08),transparent 60%),url(pwp-episode-cover-e480.png) right -80px center / 520px no-repeat;opacity:.22;pointer-events:none}
-.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-.eyebrow{font:600 12px/1 Montserrat,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin:0 0 18px}
-.hero h1{margin:0 0 18px;font-size:clamp(40px,6vw,64px);line-height:1.02;font-weight:900;letter-spacing:-.02em}
-.hero h1 span{display:block;font-weight:300;font-size:.38em;letter-spacing:.42em;margin-bottom:10px}
-.hero h1 em{font-style:normal;font-weight:300;font-size:.34em;letter-spacing:.55em;display:block;margin-top:8px}
-.promise{font-size:19px;line-height:1.5;color:var(--muted);max-width:34em;margin:0 0 28px}
-.hero-art{justify-self:end;width:min(360px,100%);position:relative}
-.hero-art img{width:100%;border-radius:12px;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.55)}
-.hero-art .epbadge{position:absolute;right:14px;bottom:14px;font:800 28px/1 Montserrat,sans-serif;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.7)}
-
-/* player */
-.player-sec{padding:12px 0 48px}
-.player-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;position:relative}
-.player-card::before{content:"";position:absolute;left:22px;right:22px;top:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);border-radius:2px}
-.player-label{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.player-sec{padding:12px 0 56px}
+.player-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:clamp(20px,3vw,28px);position:relative}
+.player-card::before{content:"";position:absolute;left:24px;right:24px;top:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+.player-label{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:16px}
 .player-label b{font:700 13px/1 Montserrat,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
 .player-label span{font-size:13px;color:var(--muted)}
 .spotify-wrap{border-radius:12px;overflow:hidden;background:#000}
 .spotify-wrap iframe{display:block;width:100%;border:0;min-height:352px}
-.player-note{margin:12px 0 0;font-size:13px;color:var(--muted)}
+.player-note{margin:14px 0 0;font-size:13px;color:var(--muted)}
 
-/* platforms */
-.platforms{padding:8px 0 56px}
-.platforms h2{font:700 13px/1 Montserrat,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 16px;text-align:center}
-.plat-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
-.plat{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border:1px solid #fff;border-radius:999px;text-decoration:none;font:600 14px Montserrat,sans-serif;color:#fff;background:transparent;transition:background .15s,color .15s,border-color .15s}
+.platforms{padding:8px 0 64px}
+.platforms h2{font:700 13px/1 Montserrat,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 20px;text-align:center}
+.plat-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.plat{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;border:1px solid #fff;border-radius:999px;text-decoration:none;font:600 14px Montserrat,sans-serif;color:#fff;background:transparent;transition:background .15s,color .15s}
 .plat:hover{background:#fff;color:#000}
 .plat svg{width:18px;height:18px;flex:none}
 
-/* sections */
-section.block{padding:56px 0;border-top:1px solid var(--line)}
-section.block h2{font:800 28px/1.15 Montserrat,sans-serif;letter-spacing:-.01em;margin:0 0 10px}
-section.block .lede{color:var(--muted);max-width:40em;margin:0 0 28px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px}
-.card h3{margin:0 0 8px;font:700 16px/1.3 Montserrat,sans-serif}
+section.block{padding:var(--pad-y) 0;border-top:1px solid var(--line)}
+section.block h2{font:700 28px/1.2 Montserrat,sans-serif;letter-spacing:-.01em;margin:0 0 12px}
+section.block .lede{color:var(--muted);max-width:40em;margin:0 0 32px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.card h3{margin:0 0 10px;font:700 16px/1.3 Montserrat,sans-serif}
 .card p{margin:0;color:var(--muted);font-size:15px}
 
-/* host */
-.host{display:grid;grid-template-columns:140px 1fr;gap:28px;align-items:start}
-.host .avatar{width:140px;height:140px;border-radius:50%;object-fit:cover;border:2px solid var(--line);background:var(--surface-2)}
-.host h3{margin:0 0 4px;font:800 22px Montserrat,sans-serif}
-.host .role{color:var(--accent);font:600 13px Montserrat,sans-serif;letter-spacing:.08em;text-transform:uppercase;margin:0 0 12px}
+/* YouTube */
+.yt-feature{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#000;aspect-ratio:16/9;margin-bottom:22px}
+.yt-feature iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ytc{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:border-color .15s,transform .15s}
+.ytc:hover{border-color:var(--accent);transform:translateY(-2px)}
+.ytc img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#111}
+.ytc .cap{padding:14px 16px 16px}
+.ytc .cap b{display:block;font:700 14px/1.35 Montserrat,sans-serif;margin-bottom:4px}
+.ytc .cap span{font-size:12.5px;color:var(--muted)}
+
+/* host placeholder */
+.host{display:grid;grid-template-columns:160px 1fr;gap:28px;align-items:start}
+.host-ph{width:160px;height:160px;border-radius:50%;border:2px dashed #666;background:var(--surface-2);display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;font:600 12px/1.35 Montserrat,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#888}
+.host h3{margin:0 0 4px;font:700 22px Montserrat,sans-serif}
+.host .role{color:var(--accent);font:600 13px Montserrat,sans-serif;letter-spacing:.08em;text-transform:uppercase;margin:0 0 14px}
 .host p{margin:0;color:var(--muted);max-width:42em}
 
-/* episodes */
-.eps{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.ep{display:grid;grid-template-columns:120px 1fr;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}
+.eps{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.ep{display:grid;grid-template-columns:120px 1fr;gap:18px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}
 .ep:hover{border-color:var(--accent);transform:translateY(-2px)}
-.ep .thumb{position:relative;width:120px;height:120px;border-radius:10px;overflow:hidden;background:#111}
+.ep .thumb{width:120px;height:120px;border-radius:10px;overflow:hidden;background:#111}
 .ep .thumb img{width:100%;height:100%;object-fit:cover}
-.ep .thumb .n{position:absolute;right:6px;bottom:6px;font:800 18px/1 Montserrat,sans-serif;color:#fff;text-shadow:0 1px 8px #000}
 .ep .meta{display:flex;flex-direction:column;justify-content:center;gap:6px;min-width:0}
 .ep .meta b{font:700 16px/1.3 Montserrat,sans-serif}
 .ep .meta span{font-size:13px;color:var(--muted)}
-.ep .meta .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.ep .meta .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
 .ep .meta .links a{font:600 12px Montserrat,sans-serif;color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
 .ep .meta .links a:hover{border-bottom-color:var(--accent)}
 
-/* CTA */
-.cta{margin:8px 0 0;padding:36px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,var(--surface),var(--bg-2));text-align:center;position:relative}
-.cta::before{content:"";position:absolute;left:20%;right:20%;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
-.cta h2{margin:0 0 8px;font:800 26px Montserrat,sans-serif}
-.cta p{margin:0 auto 22px;color:var(--muted);max-width:36em}
-.btn-outline{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border:1px solid #fff;border-radius:999px;text-decoration:none;font:700 14px Montserrat,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:transparent;transition:background .15s,color .15s}
-.btn-outline:hover{background:var(--accent);border-color:var(--accent);color:#000}
-.btn-ghost{display:inline-flex;margin-left:10px;padding:14px 18px;color:var(--muted);text-decoration:none;font:600 13px Montserrat,sans-serif}
+/* WealthScore CTA: green only here */
+.cta{margin:8px 0 0;padding:clamp(40px,6vw,64px) clamp(28px,5vw,48px);border:1px solid rgba(115,169,80,.35);border-radius:16px;background:linear-gradient(180deg,#0f160f, #0a0f0a);text-align:center;position:relative}
+.cta::before{content:"";position:absolute;left:18%;right:18%;top:0;height:2px;background:linear-gradient(90deg,transparent,var(--ws-ring),transparent)}
+.cta h2{margin:0 0 12px;font:700 26px Montserrat,sans-serif}
+.cta p{margin:0 auto 28px;color:var(--muted);max-width:36em}
+.btn-ws{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 28px;border:2px solid var(--ws-ring);border-radius:999px;text-decoration:none;font:700 14px Montserrat,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--ws-fill);box-shadow:0 0 0 0 rgba(115,169,80,.35);transition:background .15s,box-shadow .15s}
+.btn-ws:hover{background:#4c7136;box-shadow:0 0 0 4px rgba(115,169,80,.22)}
+.btn-ghost{display:inline-flex;margin-left:12px;padding:14px 18px;color:var(--muted);text-decoration:none;font:600 13px Montserrat,sans-serif}
 .btn-ghost:hover{color:#fff}
 
-/* email placeholder */
-.emailbox{margin-top:18px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.emailbox input{background:#0a0a0a;border:1px solid var(--line);border-radius:999px;padding:12px 18px;color:#fff;font:15px Montserrat,sans-serif;min-width:260px}
-.emailbox button{border:1px solid #fff;background:transparent;color:#fff;border-radius:999px;padding:12px 20px;font:700 13px Montserrat,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
-.emailbox button:hover{background:#fff;color:#000}
-.formnote{font:600 12px Arial,sans-serif;color:#c9a24a;margin-top:10px}
+.hs-form-slot{margin-top:36px;padding:28px 24px;border:1px dashed #3a3a3a;border-radius:12px;background:rgba(255,255,255,.02)}
+.hs-form-slot .label{font:700 12px Montserrat,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--ws-ring);margin:0 0 8px}
+.hs-form-slot p{margin:0;font-size:14px;color:var(--muted)}
 
-footer{margin-top:64px;border-top:1px solid var(--line);background:#050505;color:var(--muted);font-size:13px}
-footer .wrap{padding:28px 24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer{margin-top:72px;border-top:1px solid var(--line);background:#050505;color:var(--muted);font-size:13px}
+footer .wrap{padding:32px var(--pad-x);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
 footer b{color:#fff}
 
 @media(max-width:860px){
-  .hero .wrap{grid-template-columns:1fr}
-  .hero-art{justify-self:start;width:min(280px,80%)}
-  .grid3,.eps{grid-template-columns:1fr}
-  .host{grid-template-columns:96px 1fr;gap:18px}
-  .host .avatar{width:96px;height:96px}
-  .ep{grid-template-columns:96px 1fr}
+  .grid3,.yt-cards,.eps{grid-template-columns:1fr}
+  .host{grid-template-columns:1fr;justify-items:start}
+  .host-ph{width:140px;height:140px}
+  .ep{grid-template-columns:96px 1fr;gap:14px}
   .ep .thumb{width:96px;height:96px}
-  .btn-ghost{display:block;margin:12px 0 0}
+  .btn-ghost{display:block;margin:16px 0 0}
+  .cta{padding:44px 24px}
+  .hs-form-slot{margin-top:28px;padding:24px 18px}
 }
 </style>
 </head>
@@ -146,30 +152,17 @@ footer b{color:#fff}
 
 <header class="site">
   <div class="wrap">
-    <div class="brandlock">
-      <img src="pwp-logo.png" alt="The Perpetual Wealth Podcast">
-      <div class="wordmark" aria-hidden="true">
-        <span class="l1">The Perpetual</span>
-        <span class="l2">Wealth</span>
-        <span class="l3">Podcast</span>
-      </div>
-    </div>
+    <img class="logo" src="pwp-logo-full.png" alt="The Perpetual Wealth Podcast">
     <span class="draft-pill">Draft for internal review</span>
   </div>
 </header>
 
 <section class="hero">
   <div class="wrap">
-    <div>
-      <p class="eyebrow">New episodes every week</p>
-      <h1><span>The Perpetual</span>Wealth<em>Podcast</em></h1>
-      <p class="promise">Most financial stress is not a bad investment or a bad plan. It is a fractured system you never chose. Each week Patrick Donohoe takes one tension apart and rebuilds what is underneath.</p>
-      <a class="btn-outline" href="#listen">Listen to the latest episode</a>
-    </div>
-    <div class="hero-art">
-      <img src="pwp-episode-cover-e480.png" alt="Perpetual Wealth Podcast episode cover art">
-      <span class="epbadge">E.486</span>
-    </div>
+    <p class="eyebrow">New episodes every week</p>
+    <h1>One financial tension. Traced to its root. Rebuilt.</h1>
+    <p class="promise">Most financial stress is not a bad investment or a bad plan. It is a fractured system you never chose. Each week Patrick Donohoe takes one tension apart and rebuilds what is underneath.</p>
+    <a class="btn-outline" href="#listen">Listen to the latest episode</a>
   </div>
 </section>
 
@@ -190,7 +183,7 @@ footer b{color:#fff}
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"></iframe>
       </div>
-      <p class="player-note">Latest on the Riverside feed: <b style="color:#fff">E.486 Cash Flow is the Gate</b> (Nov 6, 2026). This Spotify show embed updates when a new episode publishes. Do not use the old Libsyn / “Strategy Podcast” feed.</p>
+      <p class="player-note">Latest on the Riverside feed: <b style="color:#fff">E.486 Cash Flow is the Gate</b> (Nov 6, 2026). This Spotify show embed updates when a new episode publishes.</p>
     </div>
   </div>
 </section>
@@ -240,11 +233,41 @@ footer b{color:#fff}
   </div>
 </section>
 
+<section class="block" id="watch">
+  <div class="wrap">
+    <h2>Watch on YouTube</h2>
+    <p class="lede">Latest full episode, then three recent ones from the Paradigm Life channel.</p>
+    <div class="yt-feature">
+      <iframe
+        title="Latest episode on YouTube"
+        src="https://www.youtube.com/embed/VHeVcar4oCg"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        loading="lazy"></iframe>
+    </div>
+    <div class="yt-cards">
+      <a class="ytc" href="https://www.youtube.com/watch?v=VHeVcar4oCg" target="_blank" rel="noopener">
+        <img src="https://i.ytimg.com/vi/VHeVcar4oCg/hqdefault.jpg" alt="">
+        <div class="cap"><b>Cash Flow is the Gate</b><span>E.486 · Nov 6, 2026</span></div>
+      </a>
+      <a class="ytc" href="https://www.youtube.com/watch?v=eOf9bsAOU9U" target="_blank" rel="noopener">
+        <img src="https://i.ytimg.com/vi/eOf9bsAOU9U/hqdefault.jpg" alt="">
+        <div class="cap"><b>Write Your Own Rules</b><span>E.485 · Nov 2, 2026</span></div>
+      </a>
+      <a class="ytc" href="https://www.youtube.com/watch?v=Uu2qa6zXfVk" target="_blank" rel="noopener">
+        <img src="https://i.ytimg.com/vi/Uu2qa6zXfVk/hqdefault.jpg" alt="">
+        <div class="cap"><b>How Healthy Is Your Financial Picture?</b><span>E.483 · Oct 20, 2026</span></div>
+      </a>
+    </div>
+    <p class="player-note" style="margin-top:18px">Mockup note: the All Episodes playlist (<code>PL6ZUhtyHuVhFnPyTljFU4SmhOzaZYnqKh</code>) is not ordered newest-first and is missing E.485/E.486, so a playlist embed would not auto-show the latest. Cards above are seeded from the channel RSS. For HubSpot, simplest auto-update is a dedicated “latest episodes” playlist kept newest-first, then one <code>youtube.com/embed/videoseries?list=…</code> module.</p>
+  </div>
+</section>
+
 <section class="block">
   <div class="wrap">
     <h2>Your host</h2>
-    <div class="host" style="margin-top:24px">
-      <img class="avatar" src="https://i.ytimg.com/vi/VHeVcar4oCg/hqdefault.jpg" alt="Patrick Donohoe">
+    <div class="host" style="margin-top:28px">
+      <div class="host-ph" role="img" aria-label="Placeholder for Patrick Donohoe photo">Photo placeholder<br>Rachel to supply</div>
       <div>
         <h3>Patrick Donohoe</h3>
         <p class="role">Host · CEO, Paradigm Life</p>
@@ -257,10 +280,10 @@ footer b{color:#fff}
 <section class="block">
   <div class="wrap">
     <h2>Recent episodes</h2>
-    <p class="lede">Start with the latest, or pick a tension you already feel.</p>
+    <p class="lede">Start with the latest, or pick a tension you already feel. Episode numbers live in the cover art from Riverside; nothing is overlaid here.</p>
     <div class="eps">
       <article class="ep">
-        <div class="thumb"><img src="ep1-art.jpg" alt=""><span class="n">E.486</span></div>
+        <div class="thumb"><img src="ep1-art.jpg" alt="E.486 cover art"></div>
         <div class="meta">
           <b>Cash Flow is the Gate</b>
           <span>Nov 6, 2026 · 50 min · with Jaden Zubal</span>
@@ -272,7 +295,7 @@ footer b{color:#fff}
         </div>
       </article>
       <article class="ep">
-        <div class="thumb"><img src="ep2-art.jpg" alt=""><span class="n">E.485</span></div>
+        <div class="thumb"><img src="ep2-art.jpg" alt="E.485 cover art"></div>
         <div class="meta">
           <b>Write Your Own Rules</b>
           <span>Oct 30, 2026 · 28 min · solo</span>
@@ -284,7 +307,7 @@ footer b{color:#fff}
         </div>
       </article>
       <article class="ep">
-        <div class="thumb"><img src="ep3-art.jpg" alt=""><span class="n">E.484</span></div>
+        <div class="thumb"><img src="ep3-art.jpg" alt="E.484 cover art"></div>
         <div class="meta">
           <b>Are You Investing or Just Gambling?</b>
           <span>Oct 26, 2026 · 27 min · with John Stewart</span>
@@ -295,7 +318,7 @@ footer b{color:#fff}
         </div>
       </article>
       <article class="ep">
-        <div class="thumb"><img src="ep4-art.jpg" alt=""><span class="n">E.483</span></div>
+        <div class="thumb"><img src="ep4-art.jpg" alt="E.483 cover art"></div>
         <div class="meta">
           <b>How Healthy Is Your Financial Picture?</b>
           <span>Oct 16, 2026 · 34 min · WealthScore walkthrough</span>
@@ -315,13 +338,12 @@ footer b{color:#fff}
     <div class="cta">
       <h2>Where do you stand?</h2>
       <p>Take the WealthScore™, a short self-assessment of how your financial picture is working across cash flow, protection, and asset allocation.</p>
-      <a class="btn-outline" href="https://portal.paradigmlife.net/wealthscore?utm_source=podcast-page&amp;utm_medium=referral&amp;utm_campaign=podcast-lp">Take the WealthScore™</a>
+      <a class="btn-ws" href="https://portal.paradigmlife.net/wealthscore?utm_source=podcast-page&amp;utm_medium=referral&amp;utm_campaign=podcast-lp">Take the WealthScore™</a>
       <a class="btn-ghost" href="https://learn.paradigmlife.net/or-lib-consultation-request?utm_source=podcast-page&amp;utm_medium=referral&amp;utm_campaign=podcast-lp">Or talk with a Wealth Strategist</a>
-      <div class="emailbox" aria-label="Newsletter placeholder">
-        <input type="email" placeholder="Email for new episodes (placeholder)" disabled>
-        <button type="button" disabled>Notify me</button>
+      <div class="hs-form-slot">
+        <p class="label">HubSpot form placeholder</p>
+        <p>Email subscribe for new episodes will be a real HubSpot form here (list + confirmation). Not wired in this mockup.</p>
       </div>
-      <p class="formnote">Email subscribe is a placeholder for HubSpot. Wire to a real form before launch.</p>
     </div>
   </div>
 </section>

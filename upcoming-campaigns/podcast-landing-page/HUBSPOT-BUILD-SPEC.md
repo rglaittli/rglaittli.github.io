@@ -2,181 +2,141 @@
 
 **Status:** Mockup only. Do not publish until Rachel approves.  
 **Mockup:** https://rglaittli.github.io/upcoming-campaigns/podcast-landing-page/  
-**Suggested HubSpot slug:** `/podcast` on `learn.paradigmlife.net` (replace or redirect the WordPress `paradigmlife.net/podcast/` page later).  
-**Domain:** learn.paradigmlife.net  
+**Suggested HubSpot slug:** `/podcast` on `learn.paradigmlife.net`  
 **Owner for publish OK:** Rachel (launches). Patrick for concept.
 
 ---
 
 ## Critical: use the NEW feed, not the WordPress page
 
-The live WordPress page at https://paradigmlife.net/podcast/ still points at the **old** show.
-
 | | Old (do not use) | New (use this) |
 |---|---|---|
-| Show name | The Perpetual Wealth **Strategy** Podcast (and older Wealth Standard branding) | **The Perpetual Wealth Podcast** |
+| Show name | The Perpetual Wealth **Strategy** Podcast | **The Perpetual Wealth Podcast** |
 | Host | Libsyn (legacy) | **Riverside** |
 | RSS | Old Libsyn feed | https://api.riverside.com/hosting/abvBf7Gm.rss |
-| Apple | https://podcasts.apple.com/.../id**1494982325** | https://podcasts.apple.com/us/podcast/the-perpetual-wealth-podcast/id**265016383** |
-| Spotify | https://open.spotify.com/show/**2h4fJ5RGR5QsoMrLOB8SVs** | https://open.spotify.com/show/**08iIRqJgT7X9UnbrHGF9A3** |
-| Latest verified | Stale / Season 1–3 archive on WP | **E.486 Cash Flow is the Gate** (pub Fri Nov 6, 2026) |
+| Apple | id**1494982325** | id**265016383** |
+| Spotify | show/**2h4fJ5RGR5QsoMrLOB8SVs** | show/**08iIRqJgT7X9UnbrHGF9A3** |
+| Latest verified | Stale archive on WP | **E.486 Cash Flow is the Gate** (Nov 6, 2026) |
 
-YouTube channel (video): https://www.youtube.com/@ParadigmLife  
-All-episodes playlist: https://www.youtube.com/playlist?list=PL6ZUhtyHuVhFnPyTljFU4SmhOzaZYnqKh
-
----
-
-## Page goal
-
-A listen / watch hub. Hero promise, **embedded player for the latest episode**, platform buttons, short “what you’ll hear,” host, a few recent episodes, one soft WealthScore™ CTA. Keep the Perpetual Wealth Podcast brand separate from Paradigm Life marketing pages and from FO360.
+YouTube channel: https://www.youtube.com/@ParadigmLife  
+All-episodes playlist: `PL6ZUhtyHuVhFnPyTljFU4SmhOzaZYnqKh` (see YouTube section: **not** safe for auto-latest today)
 
 ---
 
 ## Brand tokens (PWP dark)
 
-Taken from the official logo + episode cover art, with one gold accent borrowed from recent dark YouTube thumbnails (e.g. E.483).
-
 ```css
 --pwp-bg: #000000;
 --pwp-bg-2: #0A0A0A;
 --pwp-surface: #121212;
---pwp-surface-2: #1A1A1A;
 --pwp-text: #FFFFFF;
 --pwp-muted: #9A9A9A;
---pwp-ghost: #2A2A2A;   /* ghosted shield behind type */
 --pwp-line: #2C2C2C;
---pwp-accent: #D4A80E;  /* restrained gold highlight only */
+--pwp-accent: #D4A80E;   /* gold highlight only (from E.483 YT art) */
+--ws-fill: #58813d;      /* WealthScore CTA only */
+--ws-ring: #73a950;      /* WealthScore CTA ring only */
 ```
 
-**Type (Montserrat):**
-- `THE PERPETUAL` — weight 300, letter-spacing ~0.42em, all caps
-- `WEALTH` — weight 900, tight tracking, all caps
-- `PODCAST` — weight 300, letter-spacing ~0.55–0.58em, all caps
-- Body / UI — Montserrat 400/600/700
-- Episode numbers (`E.486`) — Montserrat 800/900, large, white
+**Wordmark / logo**
+- Do **not** typeset “THE PERPETUAL / WEALTH / PODCAST” in HubSpot.
+- Use the official logo PNG (shield + wordmark) as an image. Source: `/workspace/podcast-lp/assets/pwp-logo.png` (mockup uses cropped `pwp-logo-full.png`).
+- Ghosted background: shield only, very low opacity (`pwp-shield-ghost.png`). No episode cover in the hero.
 
-**Logo assets (source of truth):**
-- `/workspace/podcast-lp/assets/pwp-logo.png` (shield + mic + rising bars, white on black)
-- `/workspace/podcast-lp/assets/pwp-episode-cover-e480.png` (ghosted shield + stacked wordmark + big episode number)
+**Font ID (for reference only; logo image is the source of truth)**  
+Likely **Gotham** (Paradigm Life brand) or **Montserrat** as a free stand-in. Thin tracked lines ≈ Light/Book (~300); `WEALTH` ≈ Bold (~700), **not** Black/900. Confidence ~65%. Prefer the logo asset so weight and tracking stay exact.
 
-Do **not** use FO360 jade, soft cream WYOR backgrounds, or the Paradigm Life green wash as the page field. PWP is intentionally black. Color is highlight-only (thin accent line, play/episode number, button hover).
+**Platform buttons:** white outline on black.  
+**WealthScore™ CTA only:** fill `#58813d`, ring `#73a950`.
 
-**Platform buttons:** white outline on black, pill shape, fill white / text black on hover.  
-**WealthScore™ CTA:** same outline style (understated), not a loud green fill.
+**Spacing:** generous page padding (`clamp(28px, 5vw, 48px)` horizontal; large section vertical padding). Keep CTA inner padding roomy, including mobile.
 
 ---
 
-## Recommended embed (auto-updates)
+## Embeds
 
-### Primary: Spotify show embed (preferred for HubSpot)
-
-Auto-updates to the latest episode. No weekly edit.
+### Spotify (keep exactly as mockup; auto-updates)
 
 ```html
 <iframe
   title="The Perpetual Wealth Podcast on Spotify"
   src="https://open.spotify.com/embed/show/08iIRqJgT7X9UnbrHGF9A3?utm_source=generator&theme=0"
-  width="100%"
-  height="352"
-  frameborder="0"
+  width="100%" height="352" frameborder="0"
   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
   loading="lazy"></iframe>
 ```
 
-- `theme=0` = dark player (matches the page).
-- Height `152` = compact; `352` = show player with episode list (recommended).
+### YouTube section (under “What you will hear”)
 
-### Alternative: Riverside episode embed
+**Mockup seeding (Nov 9, 2026):**
+- Featured embed: `https://www.youtube.com/embed/VHeVcar4oCg` (E.486)
+- Cards: `VHeVcar4oCg` (E.486), `eOf9bsAOU9U` (E.485), `Uu2qa6zXfVk` (E.483)
 
-Riverside supports single-episode embeds only (no playlist). The embed code stays stable if you **Replace file** on that embed each week so the same code always plays the latest. Requires a HubSpot HTML module and a weekly ops step. Docs: Riverside Help → Embed a video or podcast episode.
+**Playlist check:** `PL6ZUhtyHuVhFnPyTljFU4SmhOzaZYnqKh` RSS currently returns older videos first and **does not include** E.485/E.486. A `youtube.com/embed/videoseries?list=…` embed would **not** auto-show the latest today.
 
-### Not recommended
-
-- Anything scraped from paradigmlife.net/podcast/ (old Apple/Spotify IDs).
-- A hard-coded episode Spotify/Apple embed that must be swapped by hand every week unless ops owns it.
+**Simplest HubSpot auto-update options (pick one):**
+1. **Preferred:** Create a dedicated YouTube playlist “PWP Latest” kept **newest-first**, add each full episode when published, embed once with  
+   `https://www.youtube.com/embed/videoseries?list=PLAYLIST_ID`  
+   HubSpot HTML module; no weekly page edit.
+2. **Manual light:** Keep featured iframe + 3 cards; update video IDs weekly from the channel RSS  
+   `https://www.youtube.com/feeds/videos.xml?channel_id=UCKmGmR4v96Ia6N494cM1Kgw` (filter out Shorts).
+3. HubSpot cannot auto-refresh static video-ID cards without a custom feed module / serverless proxy.
 
 ---
 
-## Suggested HubSpot modules / structure
+## Page modules
 
-1. **Global / page settings**
-   - Background `#000`
-   - Custom CSS with the tokens above
-   - Meta title / description (below)
-   - Favicon: PWP shield crop if available
+1. Header: full PWP logo image + draft not needed in HubSpot  
+2. Hero: eyebrow, short H1, promise, CTA to player; ghosted shield background only  
+3. Spotify player (HTML)  
+4. Watch or listen platform pills (YouTube, Spotify, Apple, All episodes)  
+5. What you will hear (3 cards)  
+6. Watch on YouTube (featured + 3 cards or playlist embed once curated)  
+7. Host (photo placeholder until Rachel supplies)  
+8. Recent episodes (Riverside cover art; episode number is **in the art**, do not overlay)  
+9. WealthScore™ CTA (green) + HubSpot email form for new-episode list
 
-2. **Header**
-   - PWP logo + stacked wordmark (or logo alone)
-   - No Paradigm Life wordmark in the header (keep PWP separate)
+---
 
-3. **Hero**
-   - Eyebrow: “New episodes every week” (accent color)
-   - H1 stacked wordmark style
-   - One-line promise (lean copy from June draft, shortened)
-   - Optional ghosted episode-cover treatment behind / beside hero
+## “What you will hear” copy sources (for Trinity)
 
-4. **Player (HTML module)**
-   - Spotify show embed above
-   - Label: “Listen here” / “Latest episode”
+| Line | Source |
+|---|---|
+| Section lede: “This is not a tips show. It is a weekly look at how money actually works in a household, and what changes when you treat it as one connected system.” | **Adapted by Grok Bot** from June Google Doc `pws-podcast-lp__landing_page` (“This isn't a show about tips. It's a show about how money actually works in a household…”) |
+| Card title “One theme, explored deeply” | **June Google Doc** (exact heading under “What You'll Hear”) |
+| Card body “Every episode anchors on a single idea and stays there long enough to change how you think about it.” | **Adapted by Grok Bot** from June Doc (“Every episode anchors on a single idea and stays there long enough to actually change how you think about it. We don't tour five topics…”) |
+| Card title “Framework, not opinion” | **June Google Doc** (exact heading) |
+| Card body “Conversations sit inside the Perpetual Wealth Strategy: cash flow, protection, and asset allocation working together.” | **Written by Grok Bot** for the mockup (June Doc talks 4-3-2-1 / pillars at a higher level; this names the three pillars directly) |
+| Card title “Patterns from real households” | **Adapted by Grok Bot** from June Doc heading “Real patterns from real households” |
+| Card body “Drawn from two decades of work with thousands of families, including what quietly fails and what people rarely ask until it is late.” | **Adapted by Grok Bot** from June Doc (“We've sat across the table from thousands of families… what actually works, what quietly fails, and what most people never think to ask…”) |
 
-5. **Watch or listen row**
-   - Buttons: YouTube, Spotify, Apple Podcasts, All episodes (playlist)
-   - URLs in the table at the top of this doc
-
-6. **What you’ll hear** (3 cards)
-   - One theme · Framework not opinion · Patterns from real households
-
-7. **Host**
-   - Patrick Donohoe, CEO, Paradigm Life
-   - Short bio (no guarantees, no tax advice)
-
-8. **Recent episodes** (manual or HubDB later)
-   - Seed with E.486–E.483
-   - Each card: art, `E.###`, title, duration, links to YT / Apple / Spotify
-   - Style: black card, bold episode number over art (match cover art)
-
-9. **Soft CTA**
-   - WealthScore™ short self-assessment  
-     `https://portal.paradigmlife.net/wealthscore?utm_source=podcast-page&utm_medium=referral&utm_campaign=podcast-lp`
-   - Optional secondary: strategist consult (existing learn.paradigmlife.net form)
-   - Optional HubSpot email form for “new episode” list (placeholder in mockup)
+Hero promise (“Most financial stress is not a bad investment…”) is adapted from the **Riverside / Apple / Spotify show description** and the current WP podcast page lede (same root copy). Host bio is adapted from the June Doc host section + WP about block, shortened.
 
 ---
 
 ## Meta (draft)
 
-- **Title:** The Perpetual Wealth Podcast | Patrick Donohoe  
-- **Description:** Listen to the latest episode of The Perpetual Wealth Podcast. Patrick Donohoe takes one financial tension apart each week. Watch on YouTube or listen on Spotify and Apple Podcasts.  
-- **OG image:** PWP logo square or latest episode cover from Riverside
+- **Title:** The Perpetual Wealth Podcast \| Patrick Donohoe  
+- **Description:** Listen to the latest episode of The Perpetual Wealth Podcast. Watch on YouTube or listen on Spotify and Apple Podcasts.  
+- **OG image:** PWP logo square
 
----
+## Wording rules
 
-## Wording rules (Rachel)
-
-- Say “livestream,” never “webinar.”
-- No em dashes.
-- No guarantees or tax advice.
-- Write **WealthScore™** and call it a **short self-assessment**, not “free.”
-- No Avalaunch mention.
-- Keep PWP brand separate from FO360 and from standard Paradigm Life cream/green marketing pages.
-
----
-
-## Copy sources
-
-- Lean rewrite of June draft: Google Doc `pws-podcast-lp__landing_page`  
-  https://docs.google.com/document/d/1DJo6i9chmFKLySbXHCiKaRj6o1zdCAWlTsIJzPyMj70/edit  
-- Show description: Riverside RSS / Apple / Spotify (aligned).
-
----
+- “livestream,” never “webinar”  
+- No em dashes  
+- No guarantees or tax advice  
+- **WealthScore™** = short self-assessment (not “free”)  
+- No Avalaunch  
+- Keep PWP dark brand separate from FO360 and cream/green PL marketing pages (except WealthScore CTA green)
 
 ## Launch checklist
 
-- [ ] Rachel approves mockup design + copy
-- [ ] Confirm HubSpot slug (`/podcast` vs new path) and whether WP `/podcast/` redirects
-- [ ] Paste Spotify show embed; confirm latest episode plays
-- [ ] Platform buttons use **new** Apple/Spotify IDs
-- [ ] WealthScore™ UTM link live
-- [ ] Email form (if any) connected to HubSpot list
-- [ ] Trinity / compliance if required for public page
-- [ ] Rachel publish OK (HubSpot is build-by-human; Grok Bot is read-only there)
+- [ ] Rachel approves mockup  
+- [ ] Patrick photo supplied  
+- [ ] Confirm slug / WP redirect  
+- [ ] Spotify embed live  
+- [ ] YouTube auto-update path chosen (new playlist vs manual)  
+- [ ] Platform buttons = **new** Apple/Spotify IDs  
+- [ ] WealthScore™ UTM link  
+- [ ] HubSpot email form wired  
+- [ ] Trinity review of “What you will hear”  
+- [ ] Rachel publish OK
