@@ -429,7 +429,8 @@ html{scroll-behavior:smooth}
 /* YT landscape lock — do not change without Rachel */
 .yt-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
 .ytc{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-.ytc img{width:100% !important;height:auto !important;aspect-ratio:16/9 !important;object-fit:cover;background:#111;display:block}
+.ytc{align-items:stretch}
+.ytc img{width:100% !important;max-width:100%;height:auto !important;max-height:none !important;aspect-ratio:16 / 9 !important;object-fit:cover;object-position:center;background:#111;display:block;flex:0 0 auto !important}
 @media (max-width:900px){
   .yt-cards{grid-template-columns:1fr;max-width:560px;margin:0 auto}
 }
@@ -562,15 +563,15 @@ html{scroll-behavior:smooth}
     <h2>Watch on YouTube</h2>
     <div class="yt-cards">
       <a class="ytc" href="https://www.youtube.com/watch?v=VHeVcar4oCg" target="_blank" rel="noopener">
-        <img src="yt-thumb-e486.jpg" width="1280" height="720" loading="lazy" alt="E.486 Cash Flow Is the Gate">
+        <img src="yt-thumb-e486.jpg" loading="lazy" alt="E.486 Cash Flow Is the Gate">
         <div class="cap"><b>Cash Flow Is the Gate</b><span>E.486 · Nov 6, 2026</span></div>
       </a>
       <a class="ytc" href="https://www.youtube.com/watch?v=eOf9bsAOU9U" target="_blank" rel="noopener">
-        <img src="yt-thumb-e485.jpg" width="1280" height="720" loading="lazy" alt="E.485 Write Your Own Rules">
+        <img src="yt-thumb-e485.jpg" loading="lazy" alt="E.485 Write Your Own Rules">
         <div class="cap"><b>Write Your Own Rules</b><span>E.485 · Oct 30, 2026</span></div>
       </a>
       <a class="ytc" href="https://www.youtube.com/watch?v=Uu2qa6zXfVk" target="_blank" rel="noopener">
-        <img src="yt-thumb-e483.jpg" width="1280" height="720" loading="lazy" alt="E.483 How Healthy Is Your Financial Picture">
+        <img src="yt-thumb-e483.jpg" loading="lazy" alt="E.483 How Healthy Is Your Financial Picture">
         <div class="cap"><b>How Healthy Is Your Financial Picture?</b><span>E.483 · Oct 16, 2026</span></div>
       </a>
     </div>
