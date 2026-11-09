@@ -12,6 +12,9 @@
 - Header uses horizontal lockup: `/workspace/pwp-banner/pwp_horizontal_white_transparent.png` (copied to mockup as `pwp-lockup-horizontal-white.png`). White on transparent for the black page.
 - Hero is taller: copy left + large ghosted shield right. Spotify is **full width** under the hero (height 352).
 - YouTube section: **no big iframe**. Three custom-thumbnail cards only.
+
+- Quote strip: skinny auto-slider between Spotify player and “What you will hear”; gold quote mark; 6s auto-advance; pause on hover; swipe on mobile; respects prefers-reduced-motion. Sources in QUOTE-SOURCES.md.
+- Host photo: Rachel-selected AI placeholder (mic behind him), `patrick-host.jpg`.
 - E.486 custom YouTube thumbnail (blue, EP. 486): `/workspace/thumbnails/ep486/E486-cash-flow-is-the-gate.png` (1280×720). Live YouTube `VHeVcar4oCg` maxres currently shows an **auto video frame** of Patrick (not this custom art). Rachel can re-upload the custom thumb in YouTube Studio; mockup already uses our file on the card.
 - Ghosted shield background retained; no episode cover in the hero.
 
